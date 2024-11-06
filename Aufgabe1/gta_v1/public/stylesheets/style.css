@@ -46,14 +46,6 @@ a {
 
 /* ### TODO ### Styles for other HTML elements */
 
-body {
-  font: 18px "Montserrat", Garamond, Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 50px;
-}
-
-
 /* Grid styles (no changes required) */
 
 .row {
@@ -157,7 +149,17 @@ body {
 
 /* ### TODO ### Styles for Footer Component */
 
-/* ... your code here ... */
+.footer {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+  background-color: var(--background-color);
+  align-items: center;
+  font: 12px Helvetica;
+  font-weight: bold;
+  padding-left: 5%;
+}
 
 
 /* ### TODO ### Media Queries */
