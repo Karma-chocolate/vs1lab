@@ -27,13 +27,16 @@
 
             <!-- ############### VS1Lab 1a Form 1 Start -->
             <form id="tag-form" action="/tagging" method="post">
+                <fieldset><legend>add new Geotag</legend>
+                    Latitute: <input type="text" label="Latitute" id="Li" placeholder="45.42069187" required>
+                    Longitute: <input type="text" label="Longitute" id="Lo" placeholder="45.12384935" required>
+                    Name: <input type="text" label="name" id="na" placeholder="e.g. bochum" maxlength="10" required>
+                    Hashtag: <input type="text" label="Hashtag" id="Ha" placeholder="e.g. #batman" maxlength="11" pattern="#\w+">
 
-                Latitute: <input type="text" name="Latitute" id="Li">
-                Longitute: <input type="text" name="Longitute" id="Lo">
-                Name: <input type="text" name="name" id="na">
-                Hashtag: <input type="text" name="Hashtag" id="Ha">
+                    <button type="submit">Tag erstellen</button> 
 
-                TRY SMTH
+                </fieldset>    
+                
 
             </form>
             <!-- ############### VS1Lab 1a Form 1 End -->
