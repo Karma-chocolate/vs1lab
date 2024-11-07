@@ -145,6 +145,7 @@ a {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 2%;
 =======
 =======
@@ -179,15 +180,19 @@ a {
 
 .main__tagging .row{
   display: block;
+=======
+  margin: 2%;
+>>>>>>> cd07baf (sync)
 }
 
-.main__tagging .col-4{
+.main__tagging .row{
   display: block;
 }
 
 /* ### TODO ### Styles for Discovery component */
 
 .main__discovery {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   flex-grow: 5;
@@ -210,6 +215,10 @@ a {
   margin: 2%;
 >>>>>>> 427fa58 (sync)
 >>>>>>> d13a247 (sync)
+=======
+  flex-grow: 5;
+  margin: 2%;
+>>>>>>> cd07baf (sync)
 }
 
 .main__discovery .row{
