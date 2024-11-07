@@ -135,6 +135,7 @@ a {
 
 .main {
   display: flex;
+  margin: 2%;
 }
 
 /* ### TODO ### Styles for Tagging component */
