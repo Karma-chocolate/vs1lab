@@ -135,6 +135,7 @@ a {
 
 .main {
   display: flex;
+  justify-content: space-around;
 }
 
 /* ### TODO ### Styles for Tagging component */
