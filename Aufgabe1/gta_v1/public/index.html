@@ -28,14 +28,14 @@
             <!-- ############### VS1Lab 1a Form 1 Start -->
             <form class="tagging__input" id="tag-form" action="/tagging" method="post">
 
-                <fieldset class="col-9"><legend>add new Geotag</legend>
+                <fieldset id="Fs" class="col-12"><legend id="Ag">Add a new Geotag</legend>
 
-                    Latitute: <input class="row" type="text" label="Latitute" id="Li" placeholder="45.42069187" required>
-                    Longitute: <input class="row" type="text" label="Longitute" id="Lo" placeholder="45.12384935" required>
-                    Name: <input class="row" type="text" label="name" id="na" placeholder="e.g. bochum" maxlength="10" required>
-                    Hashtag: <input class="row" type="text" label="Hashtag" id="Ha" placeholder="e.g. #batman" maxlength="11" pattern="#\w+">
+                    <div id="LI">Latitute:</div><input class="row" type="text" label="Latitute" id="Li" placeholder="45.42069187" required>
+                    <div id="LO">Longitude:</div><input class="row" type="text" label="Longitute" id="Lo" placeholder="45.12384935" required>
+                    <div id="NA">Name:</div><input class="row" type="text" label="name" id="Na" placeholder="e.g. bochum" maxlength="10" required>
+                    <div id="HA">Hashtag:</div><input class="row" type="text" label="Hashtag" id="Ha" placeholder="e.g. #batman" maxlength="11" pattern="#\w+">
 
-                    <button type="submit">Tag erstellen</button> 
+                    <button type="submit" id="button">Tag erstellen</button> 
 
                 </fieldset>    
                 
@@ -51,7 +51,7 @@
             <form class="discovery__search" id="discoveryFilterForm" action="/discovery" method="post">
 
                 <!-- ... your code here ... -->
-                <fieldset class="col-3"><legend>Search</legend>
+                <fieldset class="col-12"><legend>Search</legend>
                     search term or keyword:<input class="row" type="text" label="suche" id="s" placeholder="e.g. karlsruhe">
                     <button class="row" type="submit" disabled>Search</button>    
                 </fieldset>
