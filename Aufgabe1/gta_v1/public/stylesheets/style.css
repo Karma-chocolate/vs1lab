@@ -141,7 +141,6 @@ a {
 
 .main__tagging {
   flex-grow: 1;
-  margin: 2%;
 }
 
 .main__tagging .col-4{
@@ -184,10 +183,6 @@ a {
 }
 
 .main__tagging .row{
-  display: block;
-}
-
-.main__tagging .col-4{
   display: block;
 }
 
