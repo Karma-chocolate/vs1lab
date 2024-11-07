@@ -141,9 +141,10 @@ a {
 
 .main__tagging {
   flex-grow: 1;
+  margin: 2%;
 }
 
-.main__tagging .col-4{
+.main__tagging .row{
   display: block;
 }
 
