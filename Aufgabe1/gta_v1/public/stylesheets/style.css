@@ -141,7 +141,8 @@ a {
 
 .main__tagging {
   flex-grow: 1;
-  margin: 2%;
+<<<<<<< HEAD
+  margin: 3%;
 }
 
 .main__tagging .row{
@@ -153,23 +154,18 @@ a {
 
 .main__tagging .row{
   display: block;
-=======
-  margin: 2%;
->>>>>>> 427fa58 (sync)
-=======
-  margin: 2%;
->>>>>>> 6e5460b (margin merge fix)
-}
-
-.main__tagging .col-4{
-  display: block;
 }
 
 /* ### TODO ### Styles for Discovery component */
 
 .main__discovery {
+<<<<<<< HEAD
+  flex-grow: 4;
+  margin: 3%;
+=======
   flex-grow: 5;
   margin: 2%;
+>>>>>>> cd07baf (sync)
 }
 
 .main__discovery .row{
