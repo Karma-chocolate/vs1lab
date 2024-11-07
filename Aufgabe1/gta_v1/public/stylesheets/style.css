@@ -6,7 +6,7 @@
   Inherited box sizing used for ease of including 3rd party content-box components.
 */
 
-/* Global styling */
+/* Global styling hallo*/
 
 html {
   box-sizing: border-box;
@@ -50,6 +50,8 @@ fieldset{
   border: 1px solid;
   border-color: var(--border-color);
 }
+
+#
 
 /* Grid styles (no changes required) */
 
@@ -196,10 +198,15 @@ fieldset{
   height: 8%;
 }
 
+
 .discovery__search{
   display: flex;
   width: 100%;
   height: 20%;
+}
+
+#search{
+  width: 90%;
 }
 
 .discovery__map{
