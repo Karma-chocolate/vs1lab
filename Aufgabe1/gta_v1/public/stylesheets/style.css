@@ -219,7 +219,7 @@ fieldset{
 }
 
 ul.discovery__results li {
-  border: 1px #000000;
+  border: 1px solid #000000;
   color: #00B7FF;
   margin-bottom: 1%;
   background-color: #e6e5e5;
@@ -228,6 +228,7 @@ ul.discovery__results li {
   max-width: 15%;
   font-weight: bold;
   list-style-type: none;
+  border
 }
 
 #Fss {
