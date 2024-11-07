@@ -143,6 +143,7 @@ a {
 .main__tagging {
   flex-grow: 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 3%;
 }
 
@@ -151,13 +152,11 @@ a {
 =======
   margin: 2%;
 >>>>>>> cd07baf (sync)
+=======
+>>>>>>> 6a93e6c (sync)
 }
 
 .main__tagging .row{
-  display: block;
-}
-
-.main__tagging .col-4{
   display: block;
 }
 
