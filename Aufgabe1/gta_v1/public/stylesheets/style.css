@@ -46,6 +46,11 @@ a {
 
 /* ### TODO ### Styles for other HTML elements */
 
+fieldset{
+  border: 1px solid;
+  border-radius: 10px;
+}
+
 /* Grid styles (no changes required) */
 
 .row {
@@ -165,14 +170,14 @@ a {
 .main__discovery .row{
   display: block;
 }
-  
+
 .discovery__title{
   height: 8%;
 }
 
 .discovery__search{
   display: flex;
-  width: 400%;
+  width: 100%;
   height: 20%;
 }
 
