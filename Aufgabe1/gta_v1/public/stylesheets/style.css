@@ -145,8 +145,14 @@ a {
   margin: 2%;
 }
 
-.main__tagging .row{
+.main__tagging .row {
   display: block;
+}
+
+.tagging__input {
+  table-layout: auto;
+  border: 1px solid;
+  width: 80%;
 }
 
 /* ### TODO ### Styles for Discovery component */
@@ -158,6 +164,11 @@ a {
 
 .main__discovery .row{
   display: block;
+}
+
+.discovery__results {
+  font: 12px Helvetica;
+  font-weight: bold;
 }
 
 
