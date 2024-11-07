@@ -139,20 +139,24 @@ body {
   font: 12px Helvetica;
 }
 
-
 /* ### TODO ### Styles for Main Component */
 
-/* ... your code here ... */
-
+.main {
+  display: flex;
+}
 
 /* ### TODO ### Styles for Tagging component */
 
-/* ... your code here ... */
-
+.main__tagging {
+  flex-grow: 1;
+}
 
 /* ### TODO ### Styles for Discovery component */
 
-/* ... your code here ... */
+.main__discovery {
+  flex-grow: 1;
+
+}
 
 
 /* ### TODO ### Styles for Footer Component */
