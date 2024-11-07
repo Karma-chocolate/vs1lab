@@ -201,7 +201,7 @@ fieldset{
 }
 
 .discovery__title{
-  height: 4%;
+  height: 4.4%;
 }
 
 .discovery__search{
@@ -219,12 +219,11 @@ fieldset{
 }
 
 ul.discovery__results li {
-  border: 1px #000000;
+  border: 1px solid #797979;
   color: #00B7FF;
   margin-bottom: 1%;
   background-color: #e6e5e5;
   padding: 15px;
-  border-color: rgb(20, 20, 20);
   max-width: 15%;
   font-weight: bold;
   list-style-type: none;
