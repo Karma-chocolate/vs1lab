@@ -154,13 +154,12 @@ fieldset{
 }
 
 .tagging__input {
-  table-layout: auto;
   text-align:justify;
   width: 115%;
 }
 
 .tagging__title {
-  height: 8%;
+  height: 7%;
 }
 
 #Ag {
@@ -193,7 +192,7 @@ fieldset{
 /* ### TODO ### Styles for Discovery component */
 
 .main__discovery {
-  flex-grow: 6;
+  flex-grow: 5;
   margin: 2%;
 }
 
@@ -202,14 +201,11 @@ fieldset{
 }
 
 .discovery__title{
-  height: 8%;
+  height: 4%;
 }
 
-
 .discovery__search{
-  display: flex;
-  width: 100%;
-  height: 20%;
+  
 }
 
 .discovery__map{
@@ -234,6 +230,24 @@ ul.discovery__results li {
   list-style-type: none;
 }
 
+#Fss {
+  padding: 0.5%;
+}
+#Sk {
+  padding-bottom: 1;
+}
+#ss {
+  max-width: 10%;
+  padding: 0.5%;
+}
+#button2 {
+  padding: 0.5%;
+  border-radius: 1px;
+  margin-top: 1%;
+  border-color: var(--border-color);
+  box-shadow: none;
+  max-width: 10%;
+}
 
 /* ### TODO ### Styles for Footer Component */
 
