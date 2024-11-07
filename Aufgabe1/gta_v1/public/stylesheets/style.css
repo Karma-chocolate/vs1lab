@@ -143,6 +143,7 @@ a {
   flex-grow: 1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 3%;
 }
 
@@ -157,9 +158,12 @@ a {
 
 .main__tagging .row{
   display: block;
+=======
+  margin: 2%;
+>>>>>>> 427fa58 (sync)
 }
 
-.main__tagging .col-4{
+.main__tagging .row{
   display: block;
 }
 
@@ -167,12 +171,17 @@ a {
 
 .main__discovery {
 <<<<<<< HEAD
+<<<<<<< HEAD
   flex-grow: 4;
   margin: 3%;
 =======
   flex-grow: 5;
   margin: 2%;
 >>>>>>> cd07baf (sync)
+=======
+  flex-grow: 5;
+  margin: 2%;
+>>>>>>> 427fa58 (sync)
 }
 
 .main__discovery .row{
