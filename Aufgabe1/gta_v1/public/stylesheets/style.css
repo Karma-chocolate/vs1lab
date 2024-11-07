@@ -141,6 +141,7 @@ a {
 
 .main__tagging {
   flex-grow: 1;
+  margin: 2%;
 }
 
 .main__tagging .row{
