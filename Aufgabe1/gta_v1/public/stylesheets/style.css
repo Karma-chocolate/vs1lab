@@ -142,8 +142,11 @@ a {
 .main__tagging {
   flex-grow: 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 2%;
 =======
+=======
+>>>>>>> be1020e (sync)
 <<<<<<< HEAD
   margin: 3%;
 >>>>>>> bd659be (sync)
@@ -154,13 +157,11 @@ a {
 =======
   margin: 2%;
 >>>>>>> cd07baf (sync)
+=======
+>>>>>>> 6a93e6c (sync)
 }
 
 .main__tagging .row{
-  display: block;
-}
-
-.main__tagging .col-4{
   display: block;
 }
 
