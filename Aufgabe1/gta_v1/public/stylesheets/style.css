@@ -171,15 +171,13 @@ fieldset{
   padding: 5%;
 }
 
-#Li {padding: 2%;}
-#Lo {padding: 2%;}
-#Na {padding: 2%;}
-#Ha {padding: 2%;}
+fieldset.Field div {
+  padding: 2%;
+}
 
-#LI {padding-bottom: 2%; }
-#LO {padding-bottom: 2%; padding-top: 2%;}
-#NA {padding-bottom: 2%; padding-top: 2%;}
-#HA {padding-bottom: 2%; padding-top: 2%;}
+fieldset.Field input {
+  padding-bottom: 2%; padding-top: 2%;
+}
 
 #button {
   padding: 2%;
