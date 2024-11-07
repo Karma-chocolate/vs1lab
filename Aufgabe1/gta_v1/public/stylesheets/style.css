@@ -160,6 +160,21 @@ a {
   display: block;
 }
 
+.discovery__title{
+  height: 8%;
+}
+
+.discovery__search{
+  display: flex;
+  width: 400%;
+  height: 20%;
+}
+
+.discovery__map{
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 /* ### TODO ### Styles for Footer Component */
 
