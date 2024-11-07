@@ -135,7 +135,6 @@ a {
 
 .main {
   display: flex;
-  margin: 2%;
 }
 
 /* ### TODO ### Styles for Tagging component */
@@ -147,7 +146,7 @@ a {
 /* ### TODO ### Styles for Discovery component */
 
 .main__discovery {
-  flex-grow: 4;
+  flex-grow: 1;
 
 .main__discovery .row{
   display: block;
