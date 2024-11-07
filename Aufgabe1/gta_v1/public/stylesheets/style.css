@@ -146,6 +146,13 @@ a {
 
 .main__tagging .col-4{
   display: block;
+=======
+  margin: 2%;
+>>>>>>> cd07baf (sync)
+}
+
+.main__tagging .col-4{
+  display: block;
 }
 
 .main__tagging .col-4{
