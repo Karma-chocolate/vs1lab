@@ -167,23 +167,23 @@ fieldset{
   padding: 2%;
   font-weight: bold;
 }
+
 #Fs {
   padding: 5%;
-
 }
-#Li {padding: 3%;}
-#Lo {padding: 3%;}
-#Na {padding: 3%;}
-#Ha {padding: 3%;}
 
-#LI {padding-bottom: 2%;}
+#Li {padding: 2%;}
+#Lo {padding: 2%;}
+#Na {padding: 2%;}
+#Ha {padding: 2%;}
+
+#LI {padding-bottom: 2%; }
 #LO {padding-bottom: 2%; padding-top: 2%;}
 #NA {padding-bottom: 2%; padding-top: 2%;}
 #HA {padding-bottom: 2%; padding-top: 2%;}
 
 #button {
   padding: 2%;
-  position: relative;
   border-radius: 1px;
   margin-top: 5%;
   border-color: var(--border-color);
@@ -211,13 +211,14 @@ fieldset{
   height: 20%;
 }
 
-#search{
-  width: 90%;
-}
-
 .discovery__map{
   display: flex;
   justify-content: flex-end;
+}
+
+#Se { 
+  font-weight: bold;
+  padding: 2%;
 }
 
 
