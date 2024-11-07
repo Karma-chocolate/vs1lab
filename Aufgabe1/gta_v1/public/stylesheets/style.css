@@ -135,22 +135,29 @@ a {
 
 .main {
   display: flex;
-  margin: 2%;
+  justify-content: space-around;
 }
 
 /* ### TODO ### Styles for Tagging component */
 
 .main__tagging {
   flex-grow: 1;
+  margin: 3%;
+}
 
+.main__tagging .row{
+  display: block;
 }
 
 /* ### TODO ### Styles for Discovery component */
 
 .main__discovery {
   flex-grow: 4;
+  margin: 3%;
+}
 
-
+.main__discovery .row{
+  display: block;
 }
 
 
@@ -166,6 +173,7 @@ a {
   font: 12px Helvetica;
   font-weight: bold;
   padding-left: 5%;
+  bottom: 0;
 }
 
 
