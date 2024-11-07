@@ -151,8 +151,13 @@ a {
 
 .tagging__input {
   table-layout: auto;
-  border: 1px solid;
+  text-align: center;
   width: 80%;
+  padding: 15px;
+}
+
+.tagging__title {
+  height: 8%;
 }
 
 /* ### TODO ### Styles for Discovery component */
