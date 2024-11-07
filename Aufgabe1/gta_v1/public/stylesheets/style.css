@@ -51,8 +51,6 @@ fieldset{
   border-color: var(--border-color);
 }
 
-#
-
 /* Grid styles (no changes required) */
 
 .row {
@@ -182,6 +180,14 @@ fieldset{
 #LO {padding-bottom: 2%; padding-top: 2%;}
 #NA {padding-bottom: 2%; padding-top: 2%;}
 #HA {padding-bottom: 2%; padding-top: 2%;}
+
+#button {
+  padding: 2%;
+  position: relative;
+  border-radius: 1px;
+  margin-top: 5%;
+  border-color: var(--border-color);
+}
 
 /* ### TODO ### Styles for Discovery component */
 
