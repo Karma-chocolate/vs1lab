@@ -143,10 +143,13 @@ a {
   flex-grow: 1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   margin: 2%;
 =======
 =======
 >>>>>>> be1020e (sync)
+=======
+>>>>>>> d13a247 (sync)
 <<<<<<< HEAD
   margin: 3%;
 >>>>>>> bd659be (sync)
@@ -163,9 +166,12 @@ a {
 
 .main__tagging .row{
   display: block;
+=======
+  margin: 2%;
+>>>>>>> 427fa58 (sync)
 }
 
-.main__tagging .col-4{
+.main__tagging .row{
   display: block;
 }
 
@@ -173,9 +179,12 @@ a {
 
 .main__discovery {
 <<<<<<< HEAD
+<<<<<<< HEAD
   flex-grow: 5;
   margin: 2%;
 =======
+=======
+>>>>>>> d13a247 (sync)
 <<<<<<< HEAD
   flex-grow: 4;
   margin: 3%;
@@ -183,7 +192,14 @@ a {
   flex-grow: 5;
   margin: 2%;
 >>>>>>> cd07baf (sync)
+<<<<<<< HEAD
 >>>>>>> bd659be (sync)
+=======
+=======
+  flex-grow: 5;
+  margin: 2%;
+>>>>>>> 427fa58 (sync)
+>>>>>>> d13a247 (sync)
 }
 
 .main__discovery .row{
