@@ -48,8 +48,10 @@ a {
 
 fieldset{
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: 5px;
 }
+
+#
 
 /* Grid styles (no changes required) */
 
@@ -180,10 +182,15 @@ fieldset{
   height: 8%;
 }
 
+
 .discovery__search{
   display: flex;
   width: 100%;
   height: 20%;
+}
+
+#search{
+  width: 90%;
 }
 
 .discovery__map{
