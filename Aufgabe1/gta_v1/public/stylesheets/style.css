@@ -141,104 +141,18 @@ a {
 
 .main__tagging {
   flex-grow: 1;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   margin: 2%;
-=======
-=======
->>>>>>> be1020e (sync)
-=======
->>>>>>> d13a247 (sync)
-=======
->>>>>>> e8ca06a (margin merge fix)
-<<<<<<< HEAD
-  margin: 3%;
->>>>>>> bd659be (sync)
 }
 
 .main__tagging .col-4{
-  display: block;
-=======
-  margin: 2%;
->>>>>>> cd07baf (sync)
-=======
->>>>>>> 6a93e6c (sync)
-}
-
-.main__tagging .row{
-  display: block;
-=======
-  margin: 2%;
->>>>>>> 427fa58 (sync)
-=======
-  margin: 2%;
->>>>>>> 6e5460b (margin merge fix)
-}
-
-.main__tagging .row{
-  display: block;
-=======
-  margin: 2%;
->>>>>>> cd07baf (sync)
-=======
->>>>>>> 6a93e6c (sync)
-}
-
-.main__tagging .row{
-  display: block;
-=======
-  margin: 2%;
->>>>>>> 427fa58 (sync)
-=======
-  margin: 2%;
->>>>>>> 6e5460b (margin merge fix)
-}
-
-.main__tagging .row{
   display: block;
 }
 
 /* ### TODO ### Styles for Discovery component */
 
 .main__discovery {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   flex-grow: 5;
   margin: 2%;
-=======
-=======
->>>>>>> d13a247 (sync)
-<<<<<<< HEAD
-  flex-grow: 4;
-  margin: 3%;
-=======
-  flex-grow: 5;
-  margin: 2%;
->>>>>>> cd07baf (sync)
-<<<<<<< HEAD
->>>>>>> bd659be (sync)
-=======
-=======
-  flex-grow: 5;
-  margin: 2%;
->>>>>>> 427fa58 (sync)
->>>>>>> d13a247 (sync)
-=======
-  flex-grow: 5;
-  margin: 2%;
->>>>>>> cd07baf (sync)
-=======
-  flex-grow: 5;
-  margin: 2%;
->>>>>>> 427fa58 (sync)
 }
 
 .main__discovery .row{
