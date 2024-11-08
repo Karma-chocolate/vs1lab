@@ -172,6 +172,7 @@ main li {
   margin-bottom: 20px;
   font-weight: bold;
   list-style-type: none;
+  min-width: 225px;
 }
 
 
@@ -189,14 +190,10 @@ main li {
   padding: 20px;
 }
 
-#Map {
-  justify-content: flex-start;
-}
-
 /*
 .tagging__title {
   padding-bottom: 2%;
-}
+}1
 
 #Ag {
   font-weight: bold;
