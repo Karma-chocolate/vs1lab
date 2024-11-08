@@ -144,48 +144,48 @@ fieldset{
   display: flex;
 }
 
-/* ### TODO ### Styles for Tagging component */
-
-.main__tagging.tagging {
-  padding: 20px;
-}
-
 .main div {
   padding-bottom: 15px;
   text-align: justify;
 }
 
-.main__tagging.tagging div:nth-of-type(n+1) {
-  padding-top: 3%;
-}
-
-.main__tagging.tagging input {
-  padding-bottom: 3%; 
-  padding-top: 3%;
-  padding-left: 1%;
+.main input {
+  padding-bottom: 10px; 
+  padding-top: 10px;
+  padding-left: 5px;
 }
 
 .main h2 {
   padding-bottom: 20px;
 }
 
+/* ### TODO ### Styles for Tagging component */
+
+.main__tagging.tagging {
+  padding: 20px;
+}
+
+.main__tagging.tagging div:nth-of-type(n+1) {
+  padding-top: 3%;
+}
+
 .main__discovery.discovery {
   padding: 20px;
+}
+
+#Map {
+  justify-content: flex-start;
 }
 
 main li {
   border: 1px solid #797979;
   color: #00B7FF;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background-color: #e6e5e5;
   padding: 20px;
   margin-bottom: 20px;
   font-weight: bold;
   list-style-type: none;
-}
-
-#Map {
-  justify-content: flex-start;
 }
 
 /*
