@@ -49,6 +49,8 @@ a {
 fieldset{
   border: 1px solid;
   border-color: var(--border-color);
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
 /* Grid styles (no changes required) */
@@ -144,20 +146,49 @@ fieldset{
 
 /* ### TODO ### Styles for Tagging component */
 
-.main__tagging {
-  flex-shrink: 1;
-  padding: 2%;
-  width: 18%;
+.main__tagging.tagging {
+  padding: 20px;
 }
 
-.main__tagging .row { /* MACHT NICHTS*/
-  display: block;
+.main div {
+  padding-bottom: 15px;
+  text-align: justify;
 }
 
-.tagging__input {
- 
+.main__tagging.tagging div:nth-of-type(n+1) {
+  padding-top: 3%;
 }
 
+.main__tagging.tagging input {
+  padding-bottom: 3%; 
+  padding-top: 3%;
+  padding-left: 1%;
+}
+
+.main h2 {
+  padding-bottom: 20px;
+}
+
+.main__discovery.discovery {
+  padding: 20px;
+}
+
+main li {
+  border: 1px solid #797979;
+  color: #00B7FF;
+  margin-bottom: 10px;
+  background-color: #e6e5e5;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+#Map {
+  justify-content: flex-start;
+}
+
+/*
 .tagging__title {
   padding-bottom: 2%;
 }
@@ -195,7 +226,7 @@ fieldset.Field input {
 
 /* ### TODO ### Styles for Discovery component */
 
-.main__discovery {
+/*.main__discovery {
   flex-grow: 1;
   padding: 2%;
 }
@@ -206,7 +237,7 @@ fieldset.Field input {
 
 .discovery__map{
   display: flex;
-  justify-content: flex-end;
+  justify-content:flex-start;
 }
 
 .discovery__title{
@@ -264,6 +295,7 @@ ul.discovery__results li {
   font: 12px Helvetica;
   font-weight: bold;
   padding-left: 5%;
+  position: absolute;
   bottom: 0;
 }
 
@@ -293,7 +325,7 @@ ul.discovery__results li {
   position: relative;
   text-align: center;
   text-decoration: none;
-  transition: box-shadow .15s,transform .15s;
+  transition: box-shadow .15s,transform .15s;  
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -302,6 +334,7 @@ ul.discovery__results li {
   font-size: 14px;
   font-weight: bold;
   width: 100%;
+  margin-top: 20px;
 }
 
 .button-custom:focus {
