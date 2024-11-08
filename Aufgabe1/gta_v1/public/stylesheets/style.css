@@ -163,6 +163,18 @@ fieldset{
   font-weight: bold;
 }
 
+main li {
+  border: 1px solid #797979;
+  color: #00B7FF;
+  margin-bottom: 15px;
+  background-color: #e6e5e5;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+
 /* ### TODO ### Styles for Tagging component */
 
 .main__tagging.tagging {
@@ -179,17 +191,6 @@ fieldset{
 
 #Map {
   justify-content: flex-start;
-}
-
-main li {
-  border: 1px solid #797979;
-  color: #00B7FF;
-  margin-bottom: 15px;
-  background-color: #e6e5e5;
-  padding: 20px;
-  margin-bottom: 20px;
-  font-weight: bold;
-  list-style-type: none;
 }
 
 /*
