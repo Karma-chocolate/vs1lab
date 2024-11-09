@@ -240,6 +240,15 @@ main li {
   .main .col-8 {
     width: calc(58.33% - 1rem);
   }
+  .main .col-12 {
+    width: calc(100%);
+  }
+  .main__discovery.discovery img {
+    padding-left: 0px;
+  }
+  .main__discovery.discovery span {
+    padding-left: 0px;
+  }
 }
 
 @media (width <= 600px) {
@@ -255,19 +264,10 @@ main li {
   .main .col-8 {
     width: calc(75% - 1rem);
   }
-  .main .col-12 {
-    width: calc(100%);
-  }
   .main__tagging.tagging {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
-  .main__discovery.discovery img {
-    padding-left: 0px;
-  }
-  .main__discovery.discovery span {
-    padding-left: 0px;
   }
 }
 
