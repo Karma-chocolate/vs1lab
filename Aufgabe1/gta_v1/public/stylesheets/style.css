@@ -192,6 +192,14 @@ main li {
   padding: 20px;
 }
 
+.main__discovery.discovery .row {
+  justify-content: flex-start;
+}
+
+.main__discovery.discovery img {
+  padding-left: 20px;
+}
+
 /*
 .tagging__title {
   padding-bottom: 2%;
