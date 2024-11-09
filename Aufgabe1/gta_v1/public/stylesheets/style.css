@@ -142,6 +142,8 @@ fieldset{
 
 .main {
   display: flex;
+  flex-flow: row wrap;
+  flex: 3 3 auto;
 }
 
 .main div {
@@ -302,13 +304,13 @@ ul.discovery__results li {
 
 
 /* ### TODO ### Media Queries */
-/* <= 900px */
+/* <= 590px */
 @media (width <= 360px) {
   .main {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    align-items: center;
+    align-items: center;    
   }
   .main__tagging.tagging {
     padding-top: 20px;
