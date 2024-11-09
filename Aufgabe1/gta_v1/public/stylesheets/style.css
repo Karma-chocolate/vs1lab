@@ -243,7 +243,6 @@ main li {
     flex-direction: column;
     min-height: 100%;
     align-items: center;
-    justify-content: space-evenly;
   }
   .main .col-3 {
     width: calc(75% - 1rem);
