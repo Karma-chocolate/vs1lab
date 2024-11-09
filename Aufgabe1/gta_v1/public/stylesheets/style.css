@@ -379,22 +379,14 @@ ul.discovery__results li {
     flex-direction: column;
     min-height: 100%;
     align-items: center;
-    justify-content: space-evenly;
   }
   .main__tagging {
+    display: flex;
+    flex-direction: column;
     padding-top: 20px;
     margin-left: -50px;
-  }
-  .main__tagging.tagging .row{
+    align-content: center;
     justify-content: flex-start;
-    flex-grow: 5;
-  }
-  .main__tagging fieldset {
-    min-width: 270%;
-    margin-left: -66%;
-  }
-  .main__tagging h2 {
-    margin-left: -66%;
   }
 }
 
