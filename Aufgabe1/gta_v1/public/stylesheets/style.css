@@ -379,7 +379,6 @@ ul.discovery__results li {
   .main__tagging {
     padding-top: 20px;
     margin-left: -50px;
-    flex-grow: 5;
   }
   .main__tagging.tagging .row{
     justify-content: flex-start;
