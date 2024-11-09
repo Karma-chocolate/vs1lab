@@ -110,36 +110,6 @@ fieldset{
   width: calc(100% - 1rem);
 }
 
-
-/* ### TODO ### Styles for Header Component */
-
-/*.header {
-  display: flex;
-  flex-direction: row;
-  height: 100px;
-  width: 100%;
-  background-color: var(--background-color);
-  align-items: center;
-  gap: 10%;
-  justify-content: space-around;
-}
-
-.header__image {
-  width: 50px;
-  height: 50px;
-}
-
-.header__title {
-  font: 24px Helvetica;
-  font-weight: bold;
-}
-
-.header__navigation {
-  font: 12px Helvetica;
-}*/
-
-
-
 .header .row {
   height: 100px;
   align-items: center;
@@ -215,6 +185,8 @@ main li {
   padding-top: 3%;
 }
 
+/* ### TODO ### Styles for Discovery component */
+
 .main__discovery.discovery {
   padding: 20px;
 }
@@ -234,115 +206,7 @@ main li {
   padding-left: 20px;
 }
 
-/*
-.tagging__title {
-  padding-bottom: 2%;
-}1
-
-#Ag {
-  font-weight: bold;
-}
-
-#Fs {
-  padding: 5%;
-}
-
-fieldset.Field div {
-  padding-bottom: 2%;
-  text-align: justify1;
-}
-
-fieldset.Field div:nth-of-type(n+1) {
-  padding-top: 3%;
-}
-
-fieldset.Field input {
-  padding-bottom: 3%; 
-  padding-top: 3%;
-  padding-left: 1%;
-}
-
-#button {
-  padding: 2%;
-  border-radius: 1px;
-  margin-top: 5%;
-  border-color: var(--border-color);
-  box-shadow: none;
-}
-
-/* ### TODO ### Styles for Discovery component */
-
-/*.main__discovery {
-  flex-grow: 1;
-  padding: 2%;
-}
-
-.main__discovery .row{
-  display: block;
-}
-
-.discovery__map{
-  display: flex;
-  justify-content:flex-start;
-}
-
-.discovery__title{
-  padding-bottom: 0.3%;
-}
-
-.discovery__taglist {
-  padding-top: 2%;
-}
-
-#Se { 
-  font-weight: bold;
-}
-
-ul.discovery__results li {
-
-  border: 1px solid #797979;
-  color: #00B7FF;
-  margin-bottom: 1%;
-  background-color: #e6e5e5;
-  padding: 1%;
-  max-width: 15%;
-  font-weight: bold;
-  list-style-type: none;
-}
-
-#Fss {
-  padding: 1%;
-}
-#Sk {
-  padding-bottom: 1;
-}
-#ss {
-  max-width: 10%;
-  padding: 0.5%;
-}
-#button2 {
-  padding: 0.5%;
-  border-radius: 1px;
-  margin-top: 1%;
-  border-color: var(--border-color);
-  box-shadow: none;
-  max-width: 10%;
-}
-
-/* ### TODO ### Styles for Footer Component */
-
-/*.footer {
-  display: flex;
-  flex-direction: row;
-  height: 50px;
-  width: 100%;
-  background-color: var(--background-color);
-  align-items: center;
-  font: 12px Helvetica;
-  font-weight: bold;
-  padding-left: 5%;
-  bottom: 0;
-}*/
+/* ### TODO ### Styles for Footer component */
 
 .footer .row {
   height: 50px;
@@ -381,20 +245,13 @@ ul.discovery__results li {
     align-items: center;
     justify-content: space-evenly;
   }
-  .main__tagging {
-    padding-top: 20px;
-    margin-left: -50px;
+  .main .col-3 {
+    width: calc(75% - 1rem);
   }
-  .main__tagging.tagging .row{
+  .main__tagging.tagging {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    flex-grow: 5;
-  }
-  .main__tagging fieldset {
-    min-width: 270%;
-    margin-left: -66%;
-  }
-  .main__tagging h2 {
-    margin-left: -66%;
   }
 }
 
