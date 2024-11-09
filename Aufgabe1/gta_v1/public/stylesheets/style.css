@@ -297,12 +297,23 @@ ul.discovery__results li {
   font: 12px Helvetica;
   font-weight: bold;
   padding-left: 5%;
-  position: absolute;
   bottom: 0;
 }
 
 
 /* ### TODO ### Media Queries */
+/* <= 900px */
+@media (width <= 360px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    align-items: center;
+  }
+  .main__tagging.tagging {
+    padding-top: 20px;
+  }
+}
 
 /* ... your code here ... */
 .button-custom {
