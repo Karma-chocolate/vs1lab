@@ -155,7 +155,7 @@ fieldset{
   padding-bottom: 10px; 
   padding-top: 10px;
   padding-left: 5px;
-  max-width: 350px;
+  min-width: fit-content;
   display: block;
 }
 
