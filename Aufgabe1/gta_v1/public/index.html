@@ -35,10 +35,10 @@
 
                     <fieldset><legend>Add a new Geotag</legend>
 
-                        <div>Latitute:</div><input class="row" type="text" label="Latitute" id="La" value="45.42069187" disabled>
-                        <div>Longitude:</div><input class="row" type="text" label="Longitute" id="Lo" value="45.12384935" disabled>
-                        <div>Name:</div><input class="row" type="text" label="name" id="Na" placeholder="e.g. bochum" maxlength="10" required>
-                        <div>Hashtag:</div><input class="row" type="text" label="Hashtag" id="Ha" placeholder="e.g. #batman" maxlength="11" pattern="#\w+">
+                        <label>Latitute:<input type="text" label="Latitute" id="La" value="45.42069187" disabled></label>
+                        <label>Longitude:<input type="text" label="Longitute" id="Lo" value="45.12384935" disabled></label>
+                        <label>Name:<input type="text" label="name" id="Na" placeholder="e.g. bochum" maxlength="10" required></label>
+                        <label>Hashtag:<input type="text" label="Hashtag" id="Ha" placeholder="e.g. #batman" maxlength="11" pattern="#\w+"></label>
 
                         <button class="button-custom" type="submit">Add Tag</button> 
 
@@ -58,7 +58,9 @@
 
                 <!-- ... your code here ... -->
                 <fieldset><legend>Search</legend>
-                    <div>Search Term or Keyword:</div><input class="row" type="text" label="suche" id="ss" placeholder="e.g. karlsruhe">
+                    <label>Search Term or Keyword:<input type="text" placeholder="e.g. karlsruhe"></label>
+                    <label hidden>Latitude<input type="text" id="ss" placeholder="e.g. karlsruhe" ></label>
+                    <label hidden>Longitude<input type="text" id="ss" placeholder="e.g. karlsruhe" ></label>
                     <button class="button-custom" type="submit" disabled>Search</button>    
                 </fieldset>
 
