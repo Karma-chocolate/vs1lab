@@ -117,6 +117,7 @@ class MapManager {
  * It is called once the page has been fully loaded.
  */
 function updateLocation() {
+    /* lmaoooo */
     let obj;
     LocationHelper.findLocation(obj);
     let lat = obj.latitude();
