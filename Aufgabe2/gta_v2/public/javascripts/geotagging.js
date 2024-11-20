@@ -106,7 +106,7 @@ class MapManager {
         for (const tag of tags) {
             L.marker([tag.latitude,tag.longitude])
                 .bindPopup(tag.name)
-                .addTo(this.#markers);  
+                .addTo(this.#markers);
         }
     }
 }
@@ -118,7 +118,7 @@ class MapManager {
  */
 function updateLocation() {
     LocationHelper.findLocation((helper) => {
-        const lat = helper.latitude;
+        let lat = helper.latitude;
         let long = helper.longitude;
 
         document.getElementById("La").value = lat;
@@ -126,6 +126,14 @@ function updateLocation() {
         document.getElementById("Lo").value = long;
         document.getElementById("Dlo").value = long;
 
+
+
+        const imgElement = document.getElementById("picture");
+            imgElement.remove(); // Entfernt das Bild
+
+        let map = new MapManager();
+        map.initMap(lat, long);
+        map.updateMarkers(lat, long);
     });
 }
 
