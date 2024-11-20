@@ -131,8 +131,10 @@ function updateLocation() {
         const imgElement = document.getElementById("mapView");
         imgElement.remove();
 
+
         const mapChange = document.getElementById("picture");
         mapChange.id = "map";
+
 
         let map = new MapManager();
         map.initMap(lat, long);
