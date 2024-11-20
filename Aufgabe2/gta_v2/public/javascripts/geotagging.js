@@ -128,8 +128,11 @@ function updateLocation() {
 
 
 
-        const imgElement = document.getElementById("picture");
-            imgElement.remove(); // Entfernt das Bild
+        const imgElement = document.getElementById("mapView");
+        imgElement.remove();
+
+        const mapChange = document.getElementById("picture");
+        mapChange.id = "map";
 
         let map = new MapManager();
         map.initMap(lat, long);
@@ -140,5 +143,4 @@ function updateLocation() {
 // Wait for the page to fully load its DOM content, then call updateLocation
 document.addEventListener("DOMContentLoaded", () => {
     updateLocation();
-    alert("Please change the script 'geotagging.js'");
 });
