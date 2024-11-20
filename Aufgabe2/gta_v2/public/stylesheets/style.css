@@ -251,6 +251,9 @@ main li {
   .main .col-12 {
     width: calc(100%);
   }
+  #map {
+    margin-left: 0px;
+  }
 }
 
 @media (width <= 600px) {
