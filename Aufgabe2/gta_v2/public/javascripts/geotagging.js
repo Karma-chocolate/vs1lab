@@ -123,6 +123,7 @@ function updateLocation() {
     let lat = obj.latitude();
     let long = obj.longitude();
 
+
     let displayLatitudeOne = document.getElementById("La");
     let displayLatitudeTwo = document.getElementById("Dla");
 
@@ -134,6 +135,8 @@ function updateLocation() {
     displayLongitudeOne.innerHTML = long;
     displayLongitudeTwo.innerHTML = long;
 }
+
+updateLocation();
 
 // Wait for the page to fully load its DOM content, then call updateLocation
 document.addEventListener("DOMContentLoaded", () => {
