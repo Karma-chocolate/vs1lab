@@ -117,16 +117,16 @@ class MapManager {
  * It is called once the page has been fully loaded.
  */
 function updateLocation() {
-    let obj;
-    LocationHelper.findLocation(obj);
-    var lat = 10.1;
-    var long = 10.1;
+    LocationHelper.findLocation((helper) => {
+        const lat = helper.latitude;
+        let long = helper.longitude;
 
-    document.getElementById("La").innerHTML = lat;
-    document.getElementById("Dla").innerHTML = lat;
-    document.getElementById("Lo").innerHTML = long;
-    document.getElementById("Dlo").innerHTML = long;
+        document.getElementById("La").value = lat;
+        document.getElementById("Dla").value = lat;
+        document.getElementById("Lo").value = long;
+        document.getElementById("Dlo").value = long;
 
+    });
 }
 
 // Wait for the page to fully load its DOM content, then call updateLocation
