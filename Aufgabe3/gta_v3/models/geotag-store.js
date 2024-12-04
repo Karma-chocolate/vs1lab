@@ -23,12 +23,15 @@
  * - The proximity constrained is the same as for 'getNearbyGeoTags'.
  * - Keyword matching should include partial matches from name or hashtag fields. 
  */
+
+const GeoTag = require("../models/geotag")
+
 class InMemoryGeoTagStore{
 
     #geotags = [];
 
-    addGeoTag(geotag){
-        this.#geotags.push(geotag);
+    addGeoTag(GeoTag){
+        this.#geotags.push(GeoTag);
     }
 
     removeGeoTag(name){
