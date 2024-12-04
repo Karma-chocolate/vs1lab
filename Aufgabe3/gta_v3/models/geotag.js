@@ -11,10 +11,10 @@
  */
 class GeoTag {
     GeoTag(x, y, Hash, Name) {
-        this.Name = document.getElementById("Na");
-        this.x = document.getElementById("Lo");
-        this.y = document.getElementById("La");
-        this.Hash = document.getElementById("Ha");
+        this.Name = Name;
+        this.x = x;
+        this.y = y;
+        this.Hash = Hash;
     }
 
     getGeoTag (GeoTag) {
