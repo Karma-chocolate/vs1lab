@@ -60,7 +60,10 @@ router.get('/', (req, res) => {
  * by radius around a given location.
  */
 
-// TODO: ... your code here ...
+app.post('/tagging', function(req, res) {
+    console.log(req.body);
+    res.json(req.body);
+}) // Github memes
 
 /**
  * Route '/discovery' for HTTP 'POST' requests.
@@ -78,6 +81,9 @@ router.get('/', (req, res) => {
  * by radius and keyword.
  */
 
-// TODO: ... your code here ...
+app.post('/discovery', function(req, res) {
+  console.log(req.body);
+  res.json(req.body);
+})
 
 module.exports = router;
