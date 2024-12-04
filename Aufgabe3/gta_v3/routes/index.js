@@ -12,6 +12,7 @@
 
 const express = require('express');
 const router = express.Router();
+var app = express();
 
 /**
  * The module "geotag" exports a class GeoTagStore. 
