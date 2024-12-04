@@ -1,3 +1,4 @@
+
 // File origin: VS1LAB A3
 
 /**
@@ -42,7 +43,8 @@ app.use(express.urlencoded({ extended: false }));
  * Test the result in a browser here: 'http://localhost:3000/'.
  */
 
-// TODO: ... your code here ...
+express.static(root, [options]);
+app.use(express.static('public'))
 
 // Set dedicated script for routing
 app.use('/', indexRouter);
