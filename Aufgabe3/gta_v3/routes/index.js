@@ -12,7 +12,6 @@
 
 const express = require('express');
 const router = express.Router();
-const app = express();
 
 /**
  * The module "geotag" exports a class GeoTagStore. 
@@ -52,7 +51,7 @@ router.get('/', (req, res) => {
     latitude: req.body.La, 
     longitude: req.body.Lo,
     markers: null,
-   })
+   });
 });
 
 /**

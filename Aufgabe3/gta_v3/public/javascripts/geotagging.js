@@ -19,15 +19,19 @@ function updateLocation() {
     const loF = document.getElementById("Lo");
 
     if (!latF.value || !loF.value) {
-        console.log("11111");
+        console.log("dumme");
         LocationHelper.findLocation((helper) => {
 
         const lat = helper.latitude;
         const long = helper.longitude;
 
-        document.getElementById("La").value = lat;
+        latF.value = lat;
+        loF.value = long;
+
+        console.log(latF.value);
+        console.log(loF.value);
+
         document.getElementById("Dla").value = lat;
-        document.getElementById("Lo").value = long;
         document.getElementById("Dlo").value = long;
 
         latF.value = lat;
@@ -50,7 +54,7 @@ function updateLocation() {
         });
 
      } else {
-        console.log("22222");
+        console.log("scheise");
         const lat = latF.value;
         const long = loF.value;
 
@@ -71,6 +75,7 @@ function updateLocation() {
         }
 
         mapManager.updateMarkers(latitude, longitude, tagList);
+    }
     }
 }
         
