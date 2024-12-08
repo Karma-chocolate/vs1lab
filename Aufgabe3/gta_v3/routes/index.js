@@ -95,14 +95,24 @@ router.post('/tagging', (req, res) => {
 router.post('/discovery', (req, res) => {  
   const lat = req.body;
   const long = req.body; 
-  const name = req.body;
+  const search = req.body;
   const radius = 0.1;
   let results;
-  if (!name) {
-    results = geoTagStore.getNearbyGeoTags(lat, long, radius);
+  if (search) {
+    results = geoTagStore.searchNearbyGeoTags(
+      { latitude: lat, longitude: long },
+      radius,
+      search
+    );
+
+    //console.log(1, results);
   } else {
-    results = geoTagStore.searchNearbyGeoTags(lat, long, radius, name);
-  } 
+    results = geoTagStore.getNearbyGeoTags({ latitude, longitude }, radius);
+    //console.log(2, results);
+  }
+
+  console.log(results);
+
   res.render("index", {
     latitude: lat,
     longitude: long,

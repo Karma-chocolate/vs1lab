@@ -22,14 +22,11 @@ function updateLocation() {
         console.log("dumme");
         LocationHelper.findLocation((helper) => {
 
-        const lat = helper.latitude;
-        const long = helper.longitude;
+        var lat = helper.latitude;
+        var long = helper.longitude;
 
         latF.value = lat;
         loF.value = long;
-
-        console.log(latF.value);
-        console.log(loF.value);
 
         document.getElementById("Dla").value = lat;
         document.getElementById("Dlo").value = long;
@@ -55,24 +52,23 @@ function updateLocation() {
      } else {
         console.log("scheise");
 
-        const lat = latF.value;
-        const long = loF.value;
+        var lat = latF.value;
+        var long = loF.value;
 
         console.log(latF.value);
         console.log(loF.value);
 
-        const mapManager = new MapManager();
-        mapManager.initMap(lat,long);
-
         const map = document.getElementById("map");
         const tags = map.getAttribute("data-tags");
-
         const tagList = JSON.parse(tags);
         console.log(tagList);
 
         for (const tag of tagList) {
             tag.location = { latitude: tag.latitude, longitude: tag.longitude };
         }
+
+        const mapManager = new MapManager();
+        mapManager.initMap(lat,long);
 
         mapManager.updateMarkers(latitude, longitude, tagList);
     }
