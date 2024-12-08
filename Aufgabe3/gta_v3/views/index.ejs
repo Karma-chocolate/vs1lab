@@ -80,9 +80,8 @@
                             <li><%= gtag.name %> ( <%= gtag.latitude %>,<%= gtag.longitude %>) <%= gtag.hashtag %> </li>
                         <% }); %>
                     </ul>
-                    <div id="picture" data-tags="<%= markers %>">
-                        <img src="./images/mapview.jpg" alt="a map with locations" id="mapView"/>
-                        <span></span>
+                    <div id="map" data-tags="<%= markers %>">
+                        <img class ="schmutz" src="./images/mapview.jpg" alt="a map with locations" id="mapView"/>
                     </div>
                 </div>
         </section>

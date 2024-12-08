@@ -17,7 +17,8 @@ console.log("The geoTagging script is going to start...");
 function updateLocation() {
     var latF = document.getElementById("La");
     var loF = document.getElementById("Lo");
-
+    console.log(latF.value);
+    console.log(loF.value);
     if (!latF.value || !loF.value) {
         console.log("11111");
         LocationHelper.findLocation((helper) => {
@@ -25,9 +26,13 @@ function updateLocation() {
         const lat = helper.latitude;
         const long = helper.longitude;
 
-        document.getElementById("La").value = lat;
+        latF.value = lat;
+        loF.value = long;
+
+        console.log(latF.value);
+        console.log(loF.value);
+
         document.getElementById("Dla").value = lat;
-        document.getElementById("Lo").value = long;
         document.getElementById("Dlo").value = long;
 
         latF.value = lat;
@@ -36,12 +41,11 @@ function updateLocation() {
         console.log(lat);
         console.log(long);
 
-        const imgElement = document.getElementById("mapView");
-        imgElement.remove();
+        const schmutz = document.getElementsByClassName("schmutz");
+        for (const element of schmutz) {
+            element.remove();
+        }
 
-
-        const mapChange = document.getElementById("picture");
-        mapChange.id = "map";
 
 
         let map = new MapManager();
@@ -62,13 +66,14 @@ function updateLocation() {
         let tags = map.getAttribute("data-tags");
 
         const tagList = JSON.parse(tags);
-     }
+     
 
        for (let tag of tagList) {
             tag.location = {latitude: tag.latitude, longitude: tag.longitude};
         }
 
         mapManager.updateMarkers(latitude, longitude, tagList);
+    }
 }
         
 
