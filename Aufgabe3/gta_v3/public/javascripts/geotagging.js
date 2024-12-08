@@ -62,14 +62,14 @@ function updateLocation() {
         const mapManager = new MapManager();
         mapManager.initMap(lat,long);
 
-        let map = document.getElementById("map");
-        let tags = map.getAttribute("data-tags");
+        const map = document.getElementById("map");
+        const tags = map.getAttribute("data-tags");
 
         const tagList = JSON.parse(tags);
-     
+        console.log(tagList);
 
-       for (let tag of tagList) {
-            tag.location = {latitude: tag.latitude, longitude: tag.longitude};
+        for (const tag of tagList) {
+            tag.location = { latitude: tag.latitude, longitude: tag.longitude };
         }
 
         mapManager.updateMarkers(latitude, longitude, tagList);
