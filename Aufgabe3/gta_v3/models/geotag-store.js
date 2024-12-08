@@ -43,7 +43,7 @@ class InMemoryGeoTagStore{
 
     }
 
-    searchNearbyGeoTags(x,y, radius){
+    getNearbyGeoTags(x,y, radius){
         return this.getNearbyGeoTags(x,y, radius).filter((tag) => {
             const distance = Math.sqrt((tag.x - x) ** 2 + (tag.y - y) ** 2);
             return distance <= radius;
