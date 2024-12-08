@@ -101,8 +101,5 @@ router.post('/discovery', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server auf Port 3000');
-});
 
 module.exports = router;
