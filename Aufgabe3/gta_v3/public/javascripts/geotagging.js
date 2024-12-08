@@ -76,7 +76,7 @@ function updateLocation() {
 
         mapManager.updateMarkers(latitude, longitude, tagList);
     }
-    }
+    
 }
         
 
