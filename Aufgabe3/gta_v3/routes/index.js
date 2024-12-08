@@ -68,7 +68,7 @@ router.get('/tagging', (req, res) => {
   res.render('form', { coordinates });
 })
 
-router.post('/tagging', (req, res) => { // oder doch app.post ?
+router.post('/tagging', (req, res) => {
     const { lat, long } = req.body;
     console.log('Koordinaten: Lat = ${lat}, Long = ${long}');
     res.redirect('/form?lat=${lat}&long=${long}');
@@ -91,8 +91,8 @@ router.post('/tagging', (req, res) => { // oder doch app.post ?
  */
 router.get('/discovery', (req, res) => {
   const coordinates = {
-    lat2: req.query.lat || '43.21',
-    long2: req.query.long || '54.32'
+    lat2: req.query.lat || '',
+    long2: req.query.long || ''
   };
   res.render('form', { coordinates });
 })
