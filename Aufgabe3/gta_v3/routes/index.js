@@ -47,7 +47,12 @@ const geoTagExamples = new GeoTagExamples(geoTagStore);
 
 // TODO: extend the following route example if necessary
 router.get('/', (req, res) => {
-  res.render('index', { taglist: [] })
+  res.render('index', { 
+    taglist: [], 
+    latitude: req.body.La, 
+    longitude: req.body.Lo,
+    markers: null,
+   })
 });
 
 /**
@@ -94,7 +99,7 @@ router.post('/discovery', (req, res) => {
   const name = req.body.Dse;
   const radius = 0.1;
   let results;
-  if (name == undefined) {
+  if (name) {
     results = geoTagStore.getNearbyGeoTags(lat, long, radius);
   } else {
     results = geoTagStore.searchNearbyGeoTags(lat, long, radius, name);
