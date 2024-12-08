@@ -31,6 +31,10 @@ const GeoTag = require('../models/geotag');
  */
 // eslint-disable-next-line no-unused-vars
 const GeoTagStore = require('../models/geotag-store');
+const geoTagStore = new GeoTagStore();
+
+const GeoTagExamples = require('../models/geotag-examples');
+const geoTagExamples = new GeoTagExamples(geoTagStore);
 
 /**
  * Route '/' for HTTP 'GET' requests.
@@ -65,7 +69,7 @@ router.post('/tagging', (req, res) => {
   const hash = req.body.Ha;
   const lat = req.body.La;
   const long = req.body.Lo;
-  GeoTagStore.addGeoTag(new GeoTag(name, long, lat, hash));
+  geoTagStore.addGeoTag(new GeoTag(name, long, lat, hash));
   res.redirect('/');
 });
 
@@ -91,15 +95,14 @@ router.post('/discovery', (req, res) => {
   const radius = 0.1;
   let results;
   if (name == undefined) {
-    results = GeoTagStore.searchNearbyGeoTags(lat, long, radius);
+    results = geoTagStore.searchNearbyGeoTags(lat, long, radius);
   } else {
-    results = GeoTagStore.searchNearbyGeoTags(lat, long, radius, name);
+    results = geoTagStore.searchNearbyGeoTags(lat, long, radius, name);
   } 
   res.render("index", {
     taglist: results
     //markers: JSON.stringify(results)
   });
 });
-
 
 module.exports = router;

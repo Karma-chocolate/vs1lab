@@ -39,7 +39,6 @@ class GeoTagExamples {
             const newGeoTag = new GeoTag(tag[0], tag[1], tag[2], tag[3]);
 
             geoTagStore.addGeoTag(newGeoTag);
-            console.log('Alle GeoTags im Speicher:', store.getNearbyGeoTags(0, 0, 100));
         }
     }
 }
