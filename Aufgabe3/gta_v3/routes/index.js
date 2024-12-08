@@ -105,6 +105,8 @@ router.post('/discovery', (req, res) => {
     results = geoTagStore.searchNearbyGeoTags(lat, long, radius, name);
   } 
   res.render("index", {
+    latitude: lat,
+    longitude: long,
     taglist: results,
     markers: JSON.stringify(results)
   });
