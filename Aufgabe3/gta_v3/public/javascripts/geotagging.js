@@ -15,9 +15,10 @@ console.log("The geoTagging script is going to start...");
  * It is called once the page has been fully loaded.
  */
 function updateLocation() {
-    const latF = document.getElementById("La");
-    const loF = document.getElementById("Lo");
-
+    var latF = document.getElementById("La");
+    var loF = document.getElementById("Lo");
+    console.log(latF.value);
+    console.log(loF.value);
     if (!latF.value || !loF.value) {
         console.log("dumme");
         LocationHelper.findLocation((helper) => {
@@ -34,13 +35,14 @@ function updateLocation() {
         latF.value = lat;
         loF.value = long;
 
-        console.log(latF.value);
-        console.log(loF.value);
+        console.log(lat);
+        console.log(long);
 
-       const schmutz = document.getElementsByClassName("schmutz");
-       for (const element of schmutz) {
-        element.remove();
-       }
+        const schmutz = document.getElementsByClassName("schmutz");
+        for (const element of schmutz) {
+            element.remove();
+        }
+
 
 
         let map = new MapManager();
@@ -72,7 +74,6 @@ function updateLocation() {
 
         mapManager.updateMarkers(latitude, longitude, tagList);
     }
-    
 }
         
 
