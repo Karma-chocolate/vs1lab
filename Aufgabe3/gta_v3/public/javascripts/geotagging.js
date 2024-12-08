@@ -19,7 +19,7 @@ function updateLocation() {
     var loF = document.getElementById("Lo");
 
     if (!latF.value || !loF.value) {
-        console.log("11111");
+        console.log("dumme");
         LocationHelper.findLocation((helper) => {
 
         const lat = helper.latitude;
@@ -51,7 +51,7 @@ function updateLocation() {
         });
 
      } else {
-        console.log("22222");
+        console.log("scheise");
         const lat = latF.value;
         const long = loF.value;
 
@@ -62,13 +62,14 @@ function updateLocation() {
         let tags = map.getAttribute("data-tags");
 
         const tagList = JSON.parse(tags);
-     }
+     
 
        for (let tag of tagList) {
             tag.location = {latitude: tag.latitude, longitude: tag.longitude};
         }
 
         mapManager.updateMarkers(latitude, longitude, tagList);
+    }
 }
         
 
