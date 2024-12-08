@@ -15,47 +15,42 @@ console.log("The geoTagging script is going to start...");
  * It is called once the page has been fully loaded.
  */
 function updateLocation() {
-    var latF = document.getElementById("La");
-    var loF = document.getElementById("Lo");
-    console.log(latF.value);
-    console.log(loF.value);
+    const latF = document.getElementById("La");
+    const loF = document.getElementById("Lo");
     if (!latF.value || !loF.value) {
         console.log("dumme");
         LocationHelper.findLocation((helper) => {
 
-        var lat = helper.latitude;
-        var long = helper.longitude;
+            const lat = helper.latitude;
+            const long = helper.longitude;
 
-        latF.value = lat;
-        loF.value = long;
+            latF.value = lat;
+            loF.value = long;
 
-        document.getElementById("Dla").value = lat;
-        document.getElementById("Dlo").value = long;
+            document.getElementById("Dla").value = lat;
+            document.getElementById("Dlo").value = long;
 
-        latF.value = lat;
-        loF.value = long;
+            console.log(lat);
+            console.log(long);
 
-        console.log(lat);
-        console.log(long);
-
-        const schmutz = document.getElementsByClassName("schmutz");
-        for (const element of schmutz) {
-            element.remove();
-        }
+            const schmutz = document.getElementsByClassName("schmutz");
+            for (const element of schmutz) {
+                element.remove();
+            }
 
 
 
-        let map = new MapManager();
-        map.initMap(lat, long);
-        map.updateMarkers(lat, long);
+            let map = new MapManager();
+            map.initMap(lat, long);
+            map.updateMarkers(lat, long);
         
         });
 
      } else {
         console.log("scheise");
 
-        var lat = latF.value;
-        var long = loF.value;
+        const lat = latF.value;
+        const long = loF.value;
 
         console.log(latF.value);
         console.log(loF.value);
@@ -72,8 +67,8 @@ function updateLocation() {
             tag.location = { latitude: tag.latitude, longitude: tag.longitude };
         }
 
-        const mapManager = new MapManager();
-        mapManager.initMap(lat,long);
+        let mapManager = new MapManager();
+        mapManager.initMap(lat, long);
 
         mapManager.updateMarkers(latitude, longitude, tagList);
     }
