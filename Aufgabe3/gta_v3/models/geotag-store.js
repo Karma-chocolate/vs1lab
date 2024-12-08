@@ -56,4 +56,4 @@ class InMemoryGeoTagStore{
 
 }
 
-module.exports = InMemoryGeoTagStore
+module.exports = InMemoryGeoTagStore;

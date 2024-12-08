@@ -66,7 +66,7 @@ router.post('/tagging', (req, res) => {
   const lat = req.body.La;
   const long = req.body.Lo;
   GeoTagStore.addGeoTag(new GeoTag(name, long, lat, hash));
-  res.json({"Na": name , "Ha": hash , "La": lat , "Lo": long});
+  res.redirect('/');
 });
 
 /**
@@ -88,13 +88,17 @@ router.post('/discovery', (req, res) => {
   const lat = req.body.La;
   const long = req.body.Lo; 
   const name = req.body.Dse;
-  const radius = 5;
+  const radius = 0.1;
+  let results;
   if (name == undefined) {
-    GeoTagStore.searchNearbyGeoTags(lat, long, radius);
+    results = GeoTagStore.searchNearbyGeoTags(lat, long, radius);
   } else {
-    GeoTagStore.searchNearbyGeoTags(lat, long, radius, name);
+    results = GeoTagStore.searchNearbyGeoTags(lat, long, radius, name);
   } 
-  res.json({"Dse": name});
+  res.render("index", {
+    taglist: results
+    //markers: JSON.stringify(results)
+  });
 });
 
 app.listen(3000, () => {
