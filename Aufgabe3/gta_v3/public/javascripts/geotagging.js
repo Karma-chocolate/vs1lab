@@ -15,8 +15,8 @@ console.log("The geoTagging script is going to start...");
  * It is called once the page has been fully loaded.
  */
 function updateLocation() {
-    const latF = document.getElementById("La");
-    const loF = document.getElementById("Lo");
+    var latF = document.getElementById("La");
+    var loF = document.getElementById("Lo");
 
     if (!latF.value || !loF.value) {
         console.log("11111");
@@ -25,13 +25,13 @@ function updateLocation() {
         const lat = helper.latitude;
         const long = helper.longitude;
 
-        latF.value = lat;
-        loF.value = long;
-
         document.getElementById("La").value = lat;
         document.getElementById("Dla").value = lat;
         document.getElementById("Lo").value = long;
         document.getElementById("Dlo").value = long;
+
+        latF.value = lat;
+        loF.value = long;
 
         const imgElement = document.getElementById("mapView");
         imgElement.remove();

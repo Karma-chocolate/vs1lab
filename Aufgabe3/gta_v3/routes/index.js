@@ -108,7 +108,6 @@ router.post('/discovery', (req, res) => {
     taglist: results
     //markers: JSON.stringify(results)
   });
-  res.redirect('/');
 });
 
 module.exports = router;
