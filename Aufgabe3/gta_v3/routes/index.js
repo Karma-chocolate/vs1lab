@@ -48,8 +48,8 @@ const geoTagExamples = new GeoTagExamples(geoTagStore);
 router.get('/', (req, res) => {
   res.render('index', { 
     taglist: [], 
-    latitude: req.body.La, 
-    longitude: req.body.Lo,
+    Latitude: req.body.Latitude, 
+    Longitude: req.body.Longitude,
     markers: null,
    });
 });
@@ -69,11 +69,8 @@ router.get('/', (req, res) => {
  * by radius around a given location.
  */
 router.post('/tagging', (req, res) => {   
-  const name = req.body.Na;
-  const hash = req.body.Ha;
-  const lat = req.body.La;
-  const long = req.body.Lo;
-  geoTagStore.addGeoTag(new GeoTag(name, long, lat, hash));
+  const { Name, Latitude, Longitude, Hashtag } = req.body;
+  geoTagStore.addGeoTag(new GeoTag(Name, Longitude, Latitude, Hashtag));
   res.redirect('/');
 });
 
@@ -93,15 +90,16 @@ router.post('/tagging', (req, res) => {
  * by radius and keyword.
  */
 router.post('/discovery', (req, res) => {  
-  const lat = req.body.La;
-  const long = req.body.Lo; 
-  const name = req.body.Dse;
+  const lat = req.body;
+  const long = req.body; 
+  const name = req.body;
   const radius = 0.1;
   let results;
+
   if (name) {
-    results = geoTagStore.getNearbyGeoTags(lat, long, radius);
-  } else {
     results = geoTagStore.searchNearbyGeoTags(lat, long, radius, name);
+  } else {
+    results = geoTagStore.getNearbyGeoTags(lat, long, radius);
   } 
   res.render("index", {
     latitude: lat,
