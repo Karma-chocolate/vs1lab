@@ -55,7 +55,7 @@ function updateLocation() {
         const mapManager = new MapManager();
         mapManager.initMap(lat,long);
 
-        let mapElem = document.getElementById("map");
+        let map = document.getElementById("map");
         let tags = map.getAttribute("data-tags");
 
         const tagList = JSON.parse(tags);
