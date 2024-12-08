@@ -80,7 +80,7 @@
                             <li><%= gtag.name %> ( <%= gtag.latitude %>,<%= gtag.longitude %>) <%= gtag.hashtag %> </li>
                         <% }); %>
                     </ul>
-                    <div id="picture">
+                    <div id="picture" data-tags="<%= markers %>">
                         <img src="./images/mapview.jpg" alt="a map with locations" id="mapView"/>
                         <span></span>
                     </div>
@@ -102,8 +102,6 @@
     <script src="./javascripts/geotagging.js"></script>
     <script src="./javascripts/location-helper.js"></script>
     <script src="./javascripts/map-manager.js"></script>
-    <script src="./app.js"></script>
-    <script src="./routes/index.js"></script>
 </body>
 
 </html>
