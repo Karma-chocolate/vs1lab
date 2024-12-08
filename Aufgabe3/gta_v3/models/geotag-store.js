@@ -30,6 +30,10 @@ class InMemoryGeoTagStore{
 
     #geotags = [];
 
+    get tagList() {
+        return this.#geotags;
+    }
+
     addGeoTag(GeoTag){
         this.#geotags.push(GeoTag);
     }
