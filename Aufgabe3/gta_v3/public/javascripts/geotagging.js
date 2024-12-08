@@ -15,23 +15,23 @@ console.log("The geoTagging script is going to start...");
  * It is called once the page has been fully loaded.
  */
 function updateLocation() {
-    let latF = document.getElementById("La");
-    let loF = document.getElementById("Lo");
-    console.log("123");
+    const latF = document.getElementById("La");
+    const loF = document.getElementById("Lo");
 
- //   if (!latF.value || !loF.value) {
+    if (!latF.value || !loF.value) {
+        console.log("11111");
         LocationHelper.findLocation((helper) => {
 
+        const lat = helper.latitude;
+        const long = helper.longitude;
 
-        let lat = helper.latitude;
-        let long = helper.longitude;
+        latF.value = lat;
+        loF.value = long;
 
         document.getElementById("La").value = lat;
         document.getElementById("Dla").value = lat;
         document.getElementById("Lo").value = long;
         document.getElementById("Dlo").value = long;
-
-
 
         const imgElement = document.getElementById("mapView");
         imgElement.remove();
@@ -46,7 +46,8 @@ function updateLocation() {
         map.updateMarkers(lat, long);
         });
 
- /*    } else {
+     } else {
+        console.log("22222");
         const lat = latF.value;
         const long = loF.value;
 
@@ -56,13 +57,14 @@ function updateLocation() {
         let mapElem = document.getElementById("map");
         let tags = map.getAttribute("data-tags");
 
-        let tagList = JSON.parse(tags);
+        const tagList = JSON.parse(tags);
+     }
 
        for (let tag of tagList) {
             tag.location = {latitude: tag.latitude, longitude: tag.longitude};
         }
-*/
-//        mapManager.updateMarkers(latitude, longitude, tagList);
+
+        mapManager.updateMarkers(latitude, longitude, tagList);
 
     }
 

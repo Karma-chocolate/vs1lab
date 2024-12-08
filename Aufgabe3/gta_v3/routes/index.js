@@ -95,7 +95,7 @@ router.post('/discovery', (req, res) => {
   const radius = 0.1;
   let results;
   if (name == undefined) {
-    results = geoTagStore.searchNearbyGeoTags(lat, long, radius);
+    results = geoTagStore.getNearbyGeoTags(lat, long, radius);
   } else {
     results = geoTagStore.searchNearbyGeoTags(lat, long, radius, name);
   } 
@@ -103,6 +103,7 @@ router.post('/discovery', (req, res) => {
     taglist: results
     //markers: JSON.stringify(results)
   });
+  res.redirect('/');
 });
 
 module.exports = router;
