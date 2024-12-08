@@ -15,7 +15,13 @@ console.log("The geoTagging script is going to start...");
  * It is called once the page has been fully loaded.
  */
 function updateLocation() {
-    LocationHelper.findLocation((helper) => {
+    let latF = document.getElementById("lat");
+    let loF = document.getElementById("Lo");
+
+    if (!latF.value || !loF.value) {
+        LocationHelper.findLocation((helper) => {
+
+
         let lat = helper.latitude;
         let long = helper.longitude;
 
@@ -37,7 +43,18 @@ function updateLocation() {
         let map = new MapManager();
         map.initMap(lat, long);
         map.updateMarkers(lat, long);
-    });
+        });
+
+    } else {
+        let long = loF.value;
+        let lat = latF.value;
+
+        let map = new MapManager();
+        map.initMap(lat,long)
+
+        
+
+    }
 }
 
 // Wait for the page to fully load its DOM content, then call updateLocation
