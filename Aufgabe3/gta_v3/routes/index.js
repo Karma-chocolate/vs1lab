@@ -84,11 +84,21 @@ router.post('/tagging', (req, res) => {
  * To this end, "GeoTagStore" provides methods to search geotags 
  * by radius and keyword.
  */
-/*router.post('/tagging', (req, res) => {   
+router.post('/discovery', (req, res) => {  
+  const lat = req.body.La;
+  const long = req.body.Lo; 
   const name = req.body.Dse;
-
-  
+  const radius = 5;
+  if (name == undefined) {
+    GeoTagStore.searchNearbyGeoTags(lat, long, radius);
+  } else {
+    GeoTagStore.searchNearbyGeoTags(lat, long, radius, name);
+  } 
   res.json({"Dse": name});
-});*/
+});
+
+app.listen(3000, () => {
+  console.log('Server auf Port 3000');
+});
 
 module.exports = router;
