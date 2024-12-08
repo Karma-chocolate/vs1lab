@@ -40,11 +40,10 @@ function updateLocation() {
         console.log(latF.value);
         console.log(loF.value);
 
-        const imgElement = document.getElementById("mapView");
-        imgElement.remove();
-
-        const mapChange = document.getElementById("picture");
-        mapChange.id = "map";
+       const schmutz = document.getElementsByClassName("schmutz");
+       for (const element of schmutz) {
+        element.remove();
+       }
 
 
         let map = new MapManager();
@@ -55,6 +54,7 @@ function updateLocation() {
 
      } else {
         console.log("scheise");
+
         const lat = latF.value;
         const long = loF.value;
 

@@ -98,7 +98,7 @@ router.post('/discovery', (req, res) => {
   const name = req.body;
   const radius = 0.1;
   let results;
-  if (name) {
+  if (!name) {
     results = geoTagStore.getNearbyGeoTags(lat, long, radius);
   } else {
     results = geoTagStore.searchNearbyGeoTags(lat, long, radius, name);
