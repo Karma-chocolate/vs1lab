@@ -20,7 +20,7 @@ function updateLocation() {
     console.log(latF.value);
     console.log(loF.value);
     if (!latF.value || !loF.value) {
-        console.log("11111");
+        console.log("dumme");
         LocationHelper.findLocation((helper) => {
 
         const lat = helper.latitude;
@@ -55,7 +55,7 @@ function updateLocation() {
         });
 
      } else {
-        console.log("22222");
+        console.log("scheise");
         const lat = latF.value;
         const long = loF.value;
 
