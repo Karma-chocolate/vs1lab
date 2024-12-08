@@ -55,8 +55,17 @@ function updateLocation() {
         console.log(latF.value);
         console.log(loF.value);
 
+<<<<<<< HEAD
         const map = document.getElementById("map");
         const tags = map.getAttribute("data-tags");
+=======
+        const mapManager = new MapManager();
+        mapManager.initMap(lat,long);
+
+        const map = document.getElementById("map");
+        const tags = map.getAttribute("data-tags");
+
+>>>>>>> e634915 (?!?!?!?!?)
         const tagList = JSON.parse(tags);
         console.log(tagList);
 
