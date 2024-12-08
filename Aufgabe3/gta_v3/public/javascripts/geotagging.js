@@ -21,7 +21,6 @@ function updateLocation() {
     if (!latF.value || !loF.value) {
         console.log("11111");
         LocationHelper.findLocation((helper) => {
-            console.log("1234");
 
         const lat = helper.latitude;
         const long = helper.longitude;
@@ -66,8 +65,6 @@ function updateLocation() {
         }
 
         mapManager.updateMarkers(latitude, longitude, tagList);
-
-    }
 }
         
 
