@@ -60,19 +60,14 @@ router.get('/', (req, res) => {
  * To this end, "GeoTagStore" provides a method to search geotags 
  * by radius around a given location.
  */
-router.get('/tagging', (req, res) => {
-  const coordinates = {
-    lat: req.query.lat || '43.21',
-    long: req.query.long || '54.32'
-  };
-  res.render('form', { coordinates });
-})
-
-router.post('/tagging', (req, res) => {
-    const { lat, long } = req.body;
-    console.log('Koordinaten: Lat = ${lat}, Long = ${long}');
-    res.redirect('/form?lat=${lat}&long=${long}');
-})
+router.post('/tagging', (req, res) => {   
+  const name = req.body.Na;
+  const hash = req.body.Ha;
+  const lat = req.body.La;
+  const long = req.body.Lo;
+  GeoTagStore.addGeoTag(new GeoTag(name, long, lat, hash));
+  res.json({"Na": name , "Ha": hash , "La": lat , "Lo": long});
+});
 
 /**
  * Route '/discovery' for HTTP 'POST' requests.
@@ -89,18 +84,11 @@ router.post('/tagging', (req, res) => {
  * To this end, "GeoTagStore" provides methods to search geotags 
  * by radius and keyword.
  */
-router.get('/discovery', (req, res) => {
-  const coordinates = {
-    lat2: req.query.lat || '',
-    long2: req.query.long || ''
-  };
-  res.render('form', { coordinates });
-})
+/*router.post('/tagging', (req, res) => {   
+  const name = req.body.Dse;
 
-router.post('/discovery', function(req, res) {
-  const { lat2, long2 } = req.body;
-  console.log('Koordinaten: Lat = ${lat2}, Long = ${long2}');
-  res.redirect('/form?lat=${lat2}&long=${long2}');
-})
+  
+  res.json({"Dse": name});
+});*/
 
 module.exports = router;
