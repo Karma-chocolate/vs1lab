@@ -48,9 +48,8 @@ class InMemoryGeoTagStore{
 
     searchNearbyGeoTags(x, y, radius, keyword) {
         return this.getNearbyGeoTags(x, y, radius).filter((tag) => {
-            const keywordLower = keyword.toLowerCase();
             return (
-                tag.name.toLowerCase().includes(keywordLower) || tag.hash.toLowerCase().includes(keywordLower)
+                tag.name.toLowerCase().includes(keyword.toLowerCase()) || tag.hash.toLowerCase().includes(keyword.toLowerCase())
             );
         });
     }
