@@ -19,8 +19,9 @@ function updateLocation() {
     let loF = document.getElementById("Lo");
     console.log("123");
 
- //   if (!latF.value || !loF.value) {
+    if ((latF.value =="") || (loF.value =="")) {
         LocationHelper.findLocation((helper) => {
+            console.log("1234");
 
 
         let lat = helper.latitude;
@@ -46,7 +47,7 @@ function updateLocation() {
         map.updateMarkers(lat, long);
         });
 
- /*    } else {
+     } else {
         const lat = latF.value;
         const long = loF.value;
 
@@ -61,11 +62,11 @@ function updateLocation() {
        for (let tag of tagList) {
             tag.location = {latitude: tag.latitude, longitude: tag.longitude};
         }
-*/
-//        mapManager.updateMarkers(latitude, longitude, tagList);
+
+       mapManager.updateMarkers(latitude, longitude, tagList);
 
     }
-
+}
         
 
 
