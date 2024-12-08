@@ -64,10 +64,10 @@ function updateLocation() {
         const mapManager = new MapManager();
         mapManager.initMap(lat,long);
 
-        let map = document.getElementById("map");
-        let tags = map.getAttribute("data-tags");
+        const map = document.getElementById("map");
+        const tags = map.getAttribute("data-tags");
 
-        const tagList = JSON.parse(taglistString);
+        const tagList = JSON.parse(tags);
         console.log(tagList);
 
         for (const tag of tagList) {
