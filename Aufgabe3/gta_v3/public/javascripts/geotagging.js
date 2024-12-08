@@ -49,10 +49,19 @@ function updateLocation() {
         let long = loF.value;
         let lat = latF.value;
 
-        let map = new MapManager();
-        map.initMap(lat,long)
+        let mapManager = new MapManager();
+        map.initMap(lat,long);
 
-        
+        let map = document.getElementById("map");
+        let tags = map.getAttribute("data-tags");
+
+        let tagList = JSON.parse(tags);
+
+        for (let tag of tagList) {
+            tag.location = {latitude: tag.latitude, longitude: tag.longitude};
+        }
+
+        mapManager.updateMarkers(latitude, longitude, tagList);
 
     }
 }
