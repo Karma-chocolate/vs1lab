@@ -43,7 +43,7 @@ class InMemoryGeoTagStore{
 
     }
 
-<<<<<<< HEAD
+
     getNearbyGeoTags(location, radius) {
         return this.#geotags.filter((tag) => 
             this.#isInRadius(tag, location, radius)
@@ -54,34 +54,21 @@ class InMemoryGeoTagStore{
         return this.#geotags.filter((tag) => 
             this.#isInRadius(tag, location, radius) &&
             this.#match(tag, keyword)
-=======
-    getNearbyGeoTags(x, y, radius) {
-        return this.#geotags.filter((tag) => {
-            const distance = Math.sqrt((tag.x - x) ** 2 + (tag.y - y) ** 2);
-            return distance <= radius;
-        });
+        );
     }
 
-    searchNearbyGeoTags(x, y, radius, keyword) {
-        return this.getNearbyGeoTags(x, y, radius).filter((tag) => {
-            const keywordLower = keyword.toLowerCase();
-            return (
-                tag.name.toLowerCase().includes(keywordLower) ||
-                tag.hash.toLowerCase().includes(keywordLower)
->>>>>>> e634915 (?!?!?!?!?)
-            );
-        });
-    }
 
-<<<<<<< HEAD
     #match(tag, keyword) {
         return(
             tag.name.toLowerCase().includes(keyword.toLowerCase()) || tag.hashtag.toLowerCase().includes(keyword.toLowerCase())
         );
     }
 
-=======
->>>>>>> e634915 (?!?!?!?!?)
+    #isInRadius(tag, location, radius) {
+        const x = tag.latitude - location.latitude;
+        const y = tag.longitude - location.longitude;
+        return Math.sqrt(x * x + y * y) <= radius;
+      }
 }
 
 module.exports = InMemoryGeoTagStore;
