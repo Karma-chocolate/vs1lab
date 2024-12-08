@@ -60,7 +60,7 @@ router.get('/', (req, res) => {
  * To this end, "GeoTagStore" provides a method to search geotags 
  * by radius around a given location.
  */
-app.get('/tagging', (req, res) => {
+router.get('/tagging', (req, res) => {
   const coordinates = {
     lat: req.query.lat || '43.21',
     long: req.query.long || '54.32'
@@ -68,7 +68,7 @@ app.get('/tagging', (req, res) => {
   res.render('form', { coordinates });
 })
 
-app.post('/tagging', (req, res) => {
+router.post('/tagging', (req, res) => { // oder doch app.post ?
     const { lat, long } = req.body;
     console.log('Koordinaten: Lat = ${lat}, Long = ${long}');
     res.redirect('/form?lat=${lat}&long=${long}');
@@ -89,7 +89,7 @@ app.post('/tagging', (req, res) => {
  * To this end, "GeoTagStore" provides methods to search geotags 
  * by radius and keyword.
  */
-app.get('/discovery', (req, res) => {
+router.get('/discovery', (req, res) => {
   const coordinates = {
     lat2: req.query.lat || '43.21',
     long2: req.query.long || '54.32'
@@ -97,14 +97,10 @@ app.get('/discovery', (req, res) => {
   res.render('form', { coordinates });
 })
 
-app.post('/discovery', function(req, res) {
+router.post('/discovery', function(req, res) {
   const { lat2, long2 } = req.body;
   console.log('Koordinaten: Lat = ${lat2}, Long = ${long2}');
   res.redirect('/form?lat=${lat2}&long=${long2}');
-})
-
-app.listen(3000, () => {
-  console.log('Port 3000');
 })
 
 module.exports = router;
