@@ -73,15 +73,17 @@
                 </fieldset>
 
             </form>
-            <!-- ############### VS1Lab 1a Form 2 End -->
-                <div class="row">
-                    <ul>
-                        <% if (taglist !== undefined) taglist.forEach(function(gtag) { %>
-                            <li><%= gtag.name %> ( <%= gtag.latitude %>,<%= gtag.longitude %>) <%= gtag.hashtag %> </li>
-                        <% }); %>
-                    </ul>
-                    <div id="map" data-tags="<%= markers %>">
-                        <img class ="schmutz" src="./images/mapview.jpg" alt="a map with locations" id="mapView"/>
+                <div class="discovery__taglist">
+                    <div class="row">
+                        <ul class="discovery__results" id="discoveryResults">
+                            <% if (taglist !== undefined) taglist.forEach(function(gtag) { %>
+                                <li><%= gtag.name %> ( <%= gtag.latitude %>,<%= gtag.longitude %>) <%= gtag.hashtag %> </li>
+                            <% }); %>
+                        </ul>
+
+                        <div id="map" data-tags="<%= markers %>">
+                            <img class ="schmutz" src="./images/mapview.jpg" alt="a map with locations" id="mapView"/>
+                        </div>
                     </div>
                 </div>
         </section>
