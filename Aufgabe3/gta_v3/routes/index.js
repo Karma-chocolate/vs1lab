@@ -70,10 +70,10 @@ router.get('/', (req, res) => {
  * by radius around a given location.
  */
 router.post('/tagging', (req, res) => {   
-  const name = req.body.Na;
-  const hash = req.body.Ha;
-  const lat = req.body.La;
-  const long = req.body.Lo;
+  const name = req.body;
+  const hash = req.body;
+  const lat = req.body;
+  const long = req.body;
   geoTagStore.addGeoTag(new GeoTag(name, long, lat, hash));
   res.redirect('/');
 });
@@ -94,9 +94,9 @@ router.post('/tagging', (req, res) => {
  * by radius and keyword.
  */
 router.post('/discovery', (req, res) => {  
-  const lat = req.body.La;
-  const long = req.body.Lo; 
-  const name = req.body.Dse;
+  const lat = req.body;
+  const long = req.body; 
+  const name = req.body;
   const radius = 0.1;
   let results;
   if (name) {
