@@ -33,6 +33,9 @@ function updateLocation() {
         latF.value = lat;
         loF.value = long;
 
+        console.log(lat);
+        console.log(long);
+
         const imgElement = document.getElementById("mapView");
         imgElement.remove();
 
