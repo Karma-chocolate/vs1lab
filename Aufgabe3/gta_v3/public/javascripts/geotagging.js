@@ -44,6 +44,7 @@ function updateLocation() {
         let map = new MapManager();
         map.initMap(lat, long);
         map.updateMarkers(lat, long);
+        
         });
 
      } else {
