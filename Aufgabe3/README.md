@@ -135,8 +135,8 @@ Zur Übersicht folgen noch mal alle Anforderungen in kompakter Form als Checklis
   - [x] Route `/tagging` zur **GeoTags Speicherung** erstellen. (`./routes/index.js`)
   - [x] Route `/discovery` zur **GeoTag Abfrage** erstellen. (`./routes/index.js`)
 
-- [ ] Server **Template** erweitern (`./views/index.ejs`)
-  - [ ] Koordinaten in Formulare eintragen
+- [x] Server **Template** erweitern (`./views/index.ejs`)
+  - [x] Koordinaten in Formulare eintragen
 
 ### 2. Teilaufgabe: Client-Anpassung
 
