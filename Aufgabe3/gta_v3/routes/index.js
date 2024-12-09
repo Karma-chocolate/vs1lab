@@ -48,8 +48,8 @@ const geoTagExamples = new GeoTagExamples(geoTagStore);
 router.get('/', (req, res) => {
   res.render('index', { 
     taglist: [], 
-    latitude: req.body.lat, 
-    longitude: req.body.long,
+    latitude: req.body.latitude, 
+    longitude: req.body.longitude,
     markers: null,
    });
 });
@@ -69,16 +69,26 @@ router.get('/', (req, res) => {
  * by radius around a given location.
  */
 router.post('/tagging', (req, res) => {   
-  const name = req.body;
-  const lat = req.body;
-  const long = req.body;
-  const hash = req.body;
+  const { name, latitude, longitude, hashtag, searchterm } = req.body;
 
-  const newGeoTag = new GeoTag(name, long, lat, hash);
+  const newGeoTag = new GeoTag(name, longitude, latitude, hashtag);
 
   geoTagStore.addGeoTag(newGeoTag);
 
-  res.redirect('/');
+  const search = searchterm;
+  const radius = 500;
+  let results;
+
+  results = geoTagStore.getNearbyGeoTags({ latitude: latitude, longitude: longitude }, radius);
+  //console.log(2, results);
+  
+  res.render('index', {  
+    latitude: latitude, 
+    longitude: longitude,
+    markers: null,
+    taglist: results,
+    markers: JSON.stringify(results)
+   });
 });
 
 /**
@@ -97,32 +107,31 @@ router.post('/tagging', (req, res) => {
  * by radius and keyword.
  */
 router.post('/discovery', (req, res) => {  
-  const lat = req.body;
-  const long = req.body; 
-  const search = req.body;
-  const radius = 0.1;
+  const { latitude, longitude, searchterm } = req.body;
+  const search = searchterm;
+  const radius = 500;
   let results;
 
   console.log(search);
 
   if (search) {
     results = geoTagStore.searchNearbyGeoTags(
-      { latitude: lat, longitude: long },
+      { latitude: latitude, longitude: longitude },
       radius,
       search
     );
-    console.log(1, results);
+    //console.log(1, results);
 
   } else {
-    results = geoTagStore.getNearbyGeoTags({ latitude, longitude }, radius);
-    console.log(2, results);
+    results = geoTagStore.getNearbyGeoTags({ latitude: latitude, longitude: longitude }, radius);
+    //console.log(2, results);
   }
 
   console.log(results);
 
   res.render("index", {
-    latitude: lat,
-    longitude: long,
+    latitude: latitude,
+    longitude: longitude,
     taglist: results,
     markers: JSON.stringify(results)
   });

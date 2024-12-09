@@ -24,8 +24,6 @@
  * - Keyword matching should include partial matches from name or hashtag fields. 
  */
 
-const GeoTag = require("../models/geotag")
-
 class InMemoryGeoTagStore{
 
     #geotags = [];
@@ -45,12 +43,14 @@ class InMemoryGeoTagStore{
 
 
     getNearbyGeoTags(location, radius) {
+        console.log("get geo tag", location, radius);
         return this.#geotags.filter((tag) => 
             this.#isInRadius(tag, location, radius)
         );
     }
 
     searchNearbyGeoTags(location, radius, keyword) {
+        console.log("get geo tag", location, radius);
         return this.#geotags.filter((tag) => 
             this.#isInRadius(tag, location, radius) &&
             this.#match(tag, keyword)
@@ -59,15 +59,17 @@ class InMemoryGeoTagStore{
 
 
     #match(tag, keyword) {
-        return(
-            tag.name.toLowerCase().includes(keyword.toLowerCase()) || tag.hashtag.toLowerCase().includes(keyword.toLowerCase())
-        );
+        const lowercaseKeyword = keyword.toLowerCase();
+        return (
+            tag.name.toLowerCase().includes(lowercaseKeyword) ||
+            tag.hashtag.toLowerCase().includes(lowercaseKeyword)
+    );
     }
 
     #isInRadius(tag, location, radius) {
-        const x = tag.latitude - location.latitude;
-        const y = tag.longitude - location.longitude;
-        return Math.sqrt(x * x + y * y) <= radius;
+        const dx = tag.latitude - location.latitude;
+        const dy = tag.longitude - location.longitude;
+        return Math.sqrt(dx * dx + dy * dy) <= radius;
       }
 }
 

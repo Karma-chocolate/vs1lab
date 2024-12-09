@@ -21,17 +21,17 @@ function updateLocation() {
         console.log("dumme");
         LocationHelper.findLocation((helper) => {
 
-            const lat = helper.latitude;
-            const long = helper.longitude;
+            const latitude = helper.latitude;
+            const longitude = helper.longitude;
 
-            latF.value = lat;
-            loF.value = long;
+            latF.value = latitude;
+            loF.value = longitude;
 
-            document.getElementById("Dla").value = lat;
-            document.getElementById("Dlo").value = long;
+            document.getElementById("Dla").value = latitude;
+            document.getElementById("Dlo").value = longitude;
 
-            console.log(lat);
-            console.log(long);
+            console.log(latitude);
+            console.log(longitude);
 
             const schmutz = document.getElementsByClassName("schmutz");
             for (const element of schmutz) {
@@ -40,21 +40,23 @@ function updateLocation() {
 
 
 
-            let map = new MapManager();
-            map.initMap(lat, long);
-            map.updateMarkers(lat, long);
+            let mapManager = new MapManager();
+            mapManager.initMap(latitude, longitude);
+            mapManager.updateMarkers(latitude, longitude);
         
         });
 
      } else {
         console.log("scheise");
 
-        const lat = latF.value;
-        const long = loF.value;
+        const latitude = latF.value;
+        const longitude = loF.value;
 
         console.log(latF.value);
         console.log(loF.value);
 
+        let mapManager = new MapManager();
+        mapManager.initMap(latitude, longitude);
 
         const map = document.getElementById("map");
         const tags = map.getAttribute("data-tags");
@@ -66,11 +68,10 @@ function updateLocation() {
         for (const tag of tagList) {
             tag.location = { latitude: tag.latitude, longitude: tag.longitude };
         }
-
-        let mapManager = new MapManager();
-        mapManager.initMap(lat, long);
-
+        
+        console.log(tagList)
         mapManager.updateMarkers(latitude, longitude, tagList);
+
     }
 }
         

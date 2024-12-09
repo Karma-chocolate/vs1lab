@@ -22,7 +22,6 @@
 
 <body>
     <header class="header">
-        <section class="col-12">
             <div class="row">
                 <img src="./images/location.png" alt="an image of a map and location">
                 <h1>GeoTagApp</h1>
@@ -31,7 +30,6 @@
                     <a href="#">About</a> | <a href="#">Help</a> | <a href="/">Home</a>
                 </nav>
             </div>
-        </section>
     </header>
 
     <main class="main">
@@ -44,10 +42,10 @@
 
                     <fieldset><legend>Add a new Geotag</legend>
 
-                        <label>Latitute:<input type="text" label="Latitute" id="La" value="<%= latitude %>" disabled></label>
-                        <label>Longitude:<input type="text" label="Longitute" id="Lo" value="<%= longitude %>" disabled></label>
-                        <label>Name:<input type="text" label="Name" id="Na" placeholder="e.g. bochum" maxlength="10" required></label>
-                        <label>Hashtag:<input type="text" label="Hashtag" id="Ha" placeholder="e.g. #batman" maxlength="11" pattern="#\w+"></label>
+                        <label>Latitute:<input type="text" id="La" value="<%= latitude %>" placeholder="Enter a Latitude" name="latitude" readonly></label>
+                        <label>Longitude:<input type="text" id="Lo" value="<%= longitude %>" placeholder="Enter a Longitude" name="longitude" readonly></label>
+                        <label>Name:<input type="text" name="name" id="Na" placeholder="e.g. bochum" maxlength="10" required></label>
+                        <label>Hashtag:<input type="text" name="hashtag" id="Ha" placeholder="e.g. #batman" maxlength="11" pattern="#\w+"></label>
                         <button class="button-custom" type="submit">Add Tag</button> 
 
                     </fieldset>    
@@ -66,9 +64,9 @@
 
                 <!-- ... your code here ... -->
                 <fieldset><legend>Search</legend>
-                    <label>Search Term or Keyword:<input type="text" id="Dse" placeholder="e.g. karlsruhe"></label>
-                    <label hidden>Latitude<input type="text" id="Dla" value="<%= latitude %>" placeholder="e.g. karlsruhe" ></label>
-                    <label hidden>Longitude<input type="text" id="Dlo" value="<%= longitude %>" placeholder="e.g. karlsruhe" ></label>
+                    <label>Search Term or Keyword:<input type="search" id="Dse" placeholder="e.g. karlsruhe" name="searchterm"></label>
+                    <label hidden>Latitude<input name="latitude" id="Dla" value="<%= latitude %>" placeholder="e.g. karlsruhe" readonly></label>
+                    <label hidden>Longitude<input name="longitude" id="Dlo" value="<%= longitude %>" placeholder="e.g. karlsruhe" readonly></label>
                     <button class="button-custom" type="submit">Search</button>    
                 </fieldset>
 
@@ -100,9 +98,9 @@
     <!-- Load JavaScripts
         ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./javascripts/geotagging.js"></script>
     <script src="./javascripts/location-helper.js"></script>
     <script src="./javascripts/map-manager.js"></script>
+    <script src="./javascripts/geotagging.js"></script>
 </body>
 
 </html>
