@@ -12,6 +12,7 @@
 
 const express = require('express');
 const router = express.Router();
+router.use(express.json());
 
 /**
  * The module "geotag" exports a class GeoTagStore. 
@@ -197,8 +198,8 @@ router.post("/api/geotags", (req, res) => {
   const newGT = new GeoTag(name, latitude, longitude, hashtag);
   geoTagStore.addGeoTag(newGT);
 
-  let location = "/api/geotags/" + 
-  res.location("/api/geotags/"); // newGT ID fehlt
+  let location = "/api/geotags/" + newGT.id; // newGT ID fehlt
+  res.location(location);
   res.status(201).json(newGT);
 });
 
