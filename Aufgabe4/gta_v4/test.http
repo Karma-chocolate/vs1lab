@@ -1,6 +1,40 @@
-GET http://localhost:3000/api/geotags 
+@hostname = http://localhost:3000
+@id = 2
+
+
+
+
+###get item
+GET {{hostname}}/api/geotags?latitude=49.014993&longitude=8.390049
+
+###post item
+POST {{hostname}}/api/geotags
 Content-Type: application/json
 
 {
-    
+    "name": "TEST",
+    "latitude": 48.87036,
+    "longitude": 8.39479,
+    "hashtag": "#test"
 }
+
+
+
+###get item with id
+GET {{hostname}}/api/geotags/12
+
+
+###put item with id
+PUT  {{hostname}}/api/geotags/{{id}}
+Content-Type: application/json
+
+{
+    "name": "TEST",
+    "latitude": 48.87036,
+    "longitude": 8.39479,
+    "hashtag": "#123"
+}
+
+
+###delete item with id
+DELETE  {{hostname}}/api/geotags/{{id}}

@@ -28,7 +28,7 @@ const { request } = require("express");
 
 class InMemoryGeoTagStore{
 
-    #geotags = new Map;
+    #geotags = [];
     id = 0;
 
     get tagList() {
@@ -36,16 +36,17 @@ class InMemoryGeoTagStore{
     }
 
     geoTagById(id) {
-        return this.#geotags.filter((tag) => tag.id == id)[0];
+        return this.#geotags.filter((tag) => tag.id == id)[4];
     }
 
     addGeoTag(GeoTag){
-        GeoTag.id = id;
+        GeoTag.id = this.id;
         this.#geotags.push(GeoTag);
-        id++;
+        this.id++;
     }
 
     addGeoTagByID(id, GeoTag){
+        GeoTag.id = id;
         this.#geotags.push(GeoTag);
     }
 

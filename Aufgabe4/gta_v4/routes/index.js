@@ -172,12 +172,11 @@ router.get("/api/geotags", (req,res) => {
 
   } else {
     results = geoTagStore.getNearbyGeoTags({ latitude: latitude, longitude: longitude }, radius);
-    //console.log(2, results);
+    //console.log(2, results);  
   }
 
   let jsonResponse = { geotags: results };
-  res.json(jsonResponse);
-  // .status(200). für OK
+  res.status(200).json(jsonResponse);
 });
 
 
@@ -198,8 +197,8 @@ router.post("/api/geotags", (req, res) => {
   const newGT = new GeoTag(name, latitude, longitude, hashtag);
   geoTagStore.addGeoTag(newGT);
 
-  let location = "/api/geotags/" + newGT.id; // newGT ID fehlt
-  res.location(location);
+  //let location = "/api/geotags/" + newGT.id; // newGT ID fehlt
+  res.location(`/api/geotags/${newGT.id}`);
   res.status(201).json(newGT);
 });
 
@@ -243,14 +242,15 @@ router.get("/api/geotags/:id", (req, res) => {
 
 // TODO: ... your code here ...
 router.put("/api/geotags/:id", (req, res) => {
-  const id = req.params.id;
+  const id = Number(req.params.id);
   const { name, latitude, longitude, hashtag } = req.body;
   const newGT = new GeoTag(name, latitude, longitude, hashtag);
 
-  geoTagStore.removeGeoTagByID(); //map.delete() hat eigene Kontrolle ob Objekt vorhanden
-  geoTagStore.addGeoTagById(id, newGT);
+  geoTagStore.removeGeoTagByID(id); //map.delete() hat eigene Kontrolle ob Objekt vorhanden
+  geoTagStore.addGeoTagByID(id, newGT);
 
   //kein location() weil ID unverändert
+  res.location(`/api/geotags/${newGT.id}`);
   res.status(202).json(newGT);
 });
 
@@ -267,7 +267,7 @@ router.put("/api/geotags/:id", (req, res) => {
 
 // TODO: ... your code here ...
 router.delete("/api/geotags/:id", (req, res) => {
-  const id = req.params.id;
+  const id = Number(req.params.id);
 
   geoTagStore.removeGeoTagByID(id);
   // Lösche GeoTag mit ID = id
