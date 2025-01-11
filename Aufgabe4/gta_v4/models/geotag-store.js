@@ -1,5 +1,7 @@
 // File origin: VS1LAB A3
 
+const { request } = require("express");
+
 /**
  * This script is a template for exercise VS1lab/Aufgabe3
  * Complete all TODOs in the code documentation.
@@ -26,19 +28,28 @@
 
 class InMemoryGeoTagStore{
 
-    #geotags = [];
+    #geotags = new Map;
+    id = 0;
 
     get tagList() {
         return this.#geotags;
     }
 
+    geoTagById(cid) {
+        return this.#geotags.get(cid); 
+    }
+
     addGeoTag(GeoTag){
-        this.#geotags.push(GeoTag);
+        this.#geotags.push([id, GeoTag]);
+        id++;
     }
 
     removeGeoTag(name){
         this.#geotags = this.#geotags.filter((tag) => tag.name !== name)
+    }
 
+    removeGeoTagByID(){
+        this.#geotags.delete(request.params.id);
     }
 
 
