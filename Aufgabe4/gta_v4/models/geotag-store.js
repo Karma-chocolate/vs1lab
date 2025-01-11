@@ -35,8 +35,8 @@ class InMemoryGeoTagStore{
         return this.#geotags;
     }
 
-    geoTagById(cid) {
-        return this.#geotags.get(cid); 
+    geoTagById(id) {
+        return this.#geotags.get(id); 
     }
 
     addGeoTag(GeoTag){
@@ -48,8 +48,10 @@ class InMemoryGeoTagStore{
         this.#geotags = this.#geotags.filter((tag) => tag.name !== name)
     }
 
-    removeGeoTagByID(){
-        this.#geotags.delete(request.params.id);
+    removeGeoTagByID(id){
+        if (this.#geotags.has(id)) {
+        this.#geotags.delete(id);
+        }
     }
 
 
