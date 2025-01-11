@@ -151,6 +151,32 @@ module.exports = router;
  */
 
 // TODO: ... your code here ...
+router.get("/api/geotags", (req,res) => {
+  const { latitude, longitude, searchterm} = req.query;
+
+  const search = searchterm;
+  const radius = 500;
+  let results;
+
+  console.log(search);
+
+  if (search) {
+    results = geoTagStore.searchNearbyGeoTags(
+      { latitude: latitude, longitude: longitude },
+      radius,
+      search
+    );
+    //console.log(1, results);
+
+  } else {
+    results = geoTagStore.getNearbyGeoTags({ latitude: latitude, longitude: longitude }, radius);
+    //console.log(2, results);
+  }
+
+  let jsonResponse = { geotags: results }
+  res.status(200),json(jsonResponse);
+  // 200 für OK
+});
 
 
 /**
