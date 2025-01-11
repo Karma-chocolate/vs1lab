@@ -36,16 +36,17 @@ class InMemoryGeoTagStore{
     }
 
     geoTagById(id) {
-        return this.#geotags.get(id); 
+        return this.#geotags.filter((tag) => tag.id == id)[0];
     }
 
     addGeoTag(GeoTag){
-        this.#geotags.push([id, GeoTag]);
+        GeoTag.id = id;
+        this.#geotags.push(GeoTag);
         id++;
     }
 
     addGeoTagByID(id, GeoTag){
-        this.#geotags.push([id, GeoTag]);
+        this.#geotags.push(GeoTag);
     }
 
     removeGeoTag(name){
@@ -53,7 +54,7 @@ class InMemoryGeoTagStore{
     }
 
     removeGeoTagByID(id){
-        this.#geotags.delete(id);
+        this.#geotags = this.#geotags.filter((tag) => tag.id !== id);
     }
 
 

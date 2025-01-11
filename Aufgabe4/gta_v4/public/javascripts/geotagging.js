@@ -80,4 +80,81 @@ function updateLocation() {
 // Wait for the page to fully load its DOM content, then call updateLocation
 document.addEventListener("DOMContentLoaded", () => {
     updateLocation();
+
+    // Tagging form submission (POST request)
+    const tagForm = document.getElementById("tagForm");
+    tagForm.addEventListener("submit", (event) => {
+        event.preventDefault();  // Prevent the default form submission
+
+        const formData = new FormData(tagForm);
+        const data = {
+            title: formData.get("title"),
+            description: formData.get("description"),
+            latitude: formData.get("latitude"),
+            longitude: formData.get("longitude"),
+        };
+
+        console.log("Submitting Tagging Form:", data);
+
+        fetch("/api/tag", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log("Tag successfully added:", result);
+                // Update map and discovery widget after adding a new tag
+                updateMapAndDiscoveryWidget();
+            })
+            .catch(error => {
+                console.error("Error submitting the tagging form:", error);
+            });
+    });
+
+    // Discovery form submission (GET request)
+    const discoveryForm = document.getElementById("discoveryForm");
+    discoveryForm.addEventListener("submit", (event) => {
+        event.preventDefault();  // Prevent the default form submission
+
+        const formData = new FormData(discoveryForm);
+        const queryParams = new URLSearchParams({
+            filter: formData.get("filter"),
+        });
+
+        console.log("Submitting Discovery Form:", queryParams);
+
+        fetch(`/api/discovery?${queryParams.toString()}`, {
+            method: "GET",
+        })
+            .then(response => response.json())
+            .then(result => {
+                console.log("Discovery results:", result);
+                updateMapAndDiscoveryWidget(result);  // Pass the result to update map and widget
+            })
+            .catch(error => {
+                console.error("Error submitting the discovery form:", error);
+            });
+    });
 });
+
+// Function to update the discovery widget and map after a form submission
+function updateMapAndDiscoveryWidget(tags = []) {
+    const mapManager = new MapManager();
+    const latitude = document.getElementById("La").value;
+    const longitude = document.getElementById("Lo").value;
+
+    // Update the markers on the map
+    mapManager.updateMarkers(latitude, longitude, tags);
+
+    // Update the discovery widget (you can customize this part as per your widget's structure)
+    const discoveryWidget = document.getElementById("discoveryWidget");
+    discoveryWidget.innerHTML = tags.map(tag => {
+        return `<div class="tag-item">
+            <h3>${tag.title}</h3>
+            <p>${tag.description}</p>
+        </div>`;
+    }).join("");
+}
