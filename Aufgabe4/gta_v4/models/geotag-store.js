@@ -49,9 +49,7 @@ class InMemoryGeoTagStore{
     }
 
     removeGeoTagByID(id){
-        if (this.#geotags.has(id)) {
         this.#geotags.delete(id);
-        }
     }
 
 
