@@ -71,7 +71,7 @@ router.get('/', (req, res) => {
 router.post('/tagging', (req, res) => {   
   const { name, latitude, longitude, hashtag, searchterm } = req.body;
 
-  const newGeoTag = new GeoTag(name, longitude, latitude, hashtag);
+  const newGeoTag = new GeoTag(name, latitude, longitude, hashtag);
 
   geoTagStore.addGeoTag(newGeoTag);
 

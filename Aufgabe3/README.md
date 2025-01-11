@@ -141,13 +141,13 @@ Zur Übersicht folgen noch mal alle Anforderungen in kompakter Form als Checklis
 ### 2. Teilaufgabe: Client-Anpassung
 
 - [x] Teil A: `MapManager` und `LocationHelper` **Klassen in eigene Skripte auslagern** (`./public/javascripts/geotagging.js`)
-- [ ] Teil B:  `updateLocation`-Funktion **optimieren**
-  - [ ] Auslesen von Formularfeldern mit Koordinaten
+- [x] Teil B:  `updateLocation`-Funktion **optimieren**
+  - [x] Auslesen von Formularfeldern mit Koordinaten
   - [x] Bedingte Ausführung von `LocationHelper.findLocation()`
 
 ### 3. Teilaufgabe: Karten-Erweiterung
 
-- [ ] EJS-Template mit `data-*`-Attribut erweitern
-  - [ ] Im `#map`-Element ein `data-tags`-Attribut erstellen und **Array mit GeoTag Objekten als JSON-String** einfügen
-- [ ] Aufruf von `updateMarkers` aus `updateLocation` erweitern
-  - [ ] Array mit GeoTag Objekten übergeben und **Map Marker anzeigen**
+- [x] EJS-Template mit `data-*`-Attribut erweitern
+  - [x] Im `#map`-Element ein `data-tags`-Attribut erstellen und **Array mit GeoTag Objekten als JSON-String** einfügen
+- [x] Aufruf von `updateMarkers` aus `updateLocation` erweitern
+  - [x] Array mit GeoTag Objekten übergeben und **Map Marker anzeigen**

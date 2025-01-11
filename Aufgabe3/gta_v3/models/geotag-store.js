@@ -67,9 +67,9 @@ class InMemoryGeoTagStore{
     }
 
     #isInRadius(tag, location, radius) {
-        const dx = tag.latitude - location.latitude;
-        const dy = tag.longitude - location.longitude;
-        return Math.sqrt(dx * dx + dy * dy) <= radius;
+        const x = tag.latitude - location.latitude;
+        const y = tag.longitude - location.longitude;
+        return Math.sqrt(x * x + y * y) <= radius;
       }
 }
 
