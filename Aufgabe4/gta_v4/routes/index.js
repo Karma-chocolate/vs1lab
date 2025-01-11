@@ -29,6 +29,7 @@ const GeoTagStore = require('../models/geotag-store');
 const geoTagStore = new GeoTagStore();
 
 const GeoTagExamples = require('../models/geotag-examples');
+const InMemoryGeoTagStore = require('../models/geotag-store');
 const geoTagExamples = new GeoTagExamples(geoTagStore);
 
 // App routes (A3)
@@ -174,8 +175,8 @@ router.get("/api/geotags", (req,res) => {
   }
 
   let jsonResponse = { geotags: results };
-  res.status(200).json(jsonResponse);
-  // 200 für OK
+  res.json(jsonResponse);
+  // .status(200). für OK
 });
 
 
@@ -191,6 +192,15 @@ router.get("/api/geotags", (req,res) => {
  */
 
 // TODO: ... your code here ...
+router.post("/api/geotags", (req, res) => {
+  const { name, latitude, longitude, hashtag } = req.body;
+  const newGT = new GeoTag(name, latitude, longitude, hashtag);
+  geoTagStore.addGeoTag(newGT);
+
+  let location = "/api/geotags/" + 
+  res.location("/api/geotags/"); // newGT ID fehlt
+  res.status(201).json(newGT);
+});
 
 
 /**
@@ -204,6 +214,9 @@ router.get("/api/geotags", (req,res) => {
  */
 
 // TODO: ... your code here ...
+router.get("/api/geotags/:id", (req, res) => {
+  const id = req.params.id;
+});
 
 
 /**
@@ -221,7 +234,9 @@ router.get("/api/geotags", (req,res) => {
  */
 
 // TODO: ... your code here ...
-
+router.put("/api/geotags/:id", (req, res) => {
+  const id = req.params.id;
+});
 
 /**
  * Route '/api/geotags/:id' for HTTP 'DELETE' requests.
@@ -235,5 +250,12 @@ router.get("/api/geotags", (req,res) => {
  */
 
 // TODO: ... your code here ...
+router.delete("/api/geotags/:id", (req, res) => {
+  const id = req.params.id;
+
+  // Lösche GeoTag mit ID = id
+
+  res.status(202);
+});
 
 module.exports = router;
