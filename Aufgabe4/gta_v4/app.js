@@ -16,7 +16,7 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
+const indexRouter = require('../../Aufgabe3/gta_v3/routes/index');
 
 /**
  * Set up Express app.
