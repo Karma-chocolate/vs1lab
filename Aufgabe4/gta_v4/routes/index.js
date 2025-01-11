@@ -243,7 +243,7 @@ router.get("/api/geotags/:id", (req, res) => {
 // TODO: ... your code here ...
 router.put("/api/geotags/:id", (req, res) => {
   const id = req.params.id;
-  const { name, latitude, longitude, hastag } = req.body;
+  const { name, latitude, longitude, hashtag } = req.body;
   const newGT = new GeoTag(name, latitude, longitude, hashtag);
 
   geoTagStore.removeGeoTagByID(); //map.delete() hat eigene Kontrolle ob Objekt vorhanden
