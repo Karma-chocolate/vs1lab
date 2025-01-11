@@ -216,6 +216,13 @@ router.post("/api/geotags", (req, res) => {
 // TODO: ... your code here ...
 router.get("/api/geotags/:id", (req, res) => {
   const id = req.params.id;
+  let result = geoTagStore.geoTagById(id);
+
+  if (result) {
+    res.json(result);
+  } else {
+    res.status(404).json("Object not found");
+  }
 });
 
 
@@ -236,6 +243,14 @@ router.get("/api/geotags/:id", (req, res) => {
 // TODO: ... your code here ...
 router.put("/api/geotags/:id", (req, res) => {
   const id = req.params.id;
+  const { name, latitude, longitude, hastag } = req.body;
+  const newGT = new GeoTag(name, latitude, longitude, hashtag);
+
+  geoTagStore.removeGeoTagByID(); //map.delete() hat eigene Kontrolle ob Objekt vorhanden
+  geoTagStore.addGeoTagById(id, newGT);
+
+  //kein location() weil ID unverändert
+  res.status(202).json(newGT);
 });
 
 /**
@@ -253,6 +268,7 @@ router.put("/api/geotags/:id", (req, res) => {
 router.delete("/api/geotags/:id", (req, res) => {
   const id = req.params.id;
 
+  geoTagStore.removeGeoTagByID(id);
   // Lösche GeoTag mit ID = id
 
   res.status(202);
