@@ -30,7 +30,7 @@ class InMemoryGeoTagStore{
 
     #geotags = new Map;
     id = 0;
-
+    
     get tagList() {
         return this.#geotags;
     }
@@ -40,6 +40,7 @@ class InMemoryGeoTagStore{
     }
 
     addGeoTag(GeoTag){
+        GeoTag.id = id;
         this.#geotags.push([id, GeoTag]);
         id++;
     }
