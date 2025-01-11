@@ -174,8 +174,8 @@ router.get("/api/geotags", (req,res) => {
   }
 
   let jsonResponse = { geotags: results };
-  res.status(200).json(jsonResponse);
-  // 200 für OK
+  res.json(jsonResponse);
+  // .status(200). für OK
 });
 
 
