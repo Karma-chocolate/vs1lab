@@ -44,6 +44,10 @@ class InMemoryGeoTagStore{
         id++;
     }
 
+    addGeoTagByID(id, GeoTag){
+        this.#geotags.push([id, GeoTag]);
+    }
+
     removeGeoTag(name){
         this.#geotags = this.#geotags.filter((tag) => tag.name !== name)
     }

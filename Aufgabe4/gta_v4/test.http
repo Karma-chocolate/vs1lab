@@ -2,5 +2,5 @@ POST  http://localhost:3000/api/geotags/
 content-type: application/json
 
 {
-    "name": "Nici",
+    "value": ,
 }
