@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @hostname = http://localhost:3000
 @id = 2
 
@@ -22,7 +21,7 @@ Content-Type: application/json
 
 
 ###get item with id
-GET {{hostname}}/api/geotags/12
+GET {{hostname}}/api/geotags/{{id}}
 
 
 ###put item with id
@@ -39,7 +38,3 @@ Content-Type: application/json
 
 ###delete item with id
 DELETE  {{hostname}}/api/geotags/{{id}}
-=======
-GET http://localhost:3000/api/geotags
-Content-Type: application/json
->>>>>>> 05801b9b9d52d6529f56042626f36e981f716734
