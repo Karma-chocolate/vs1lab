@@ -1,6 +1,6 @@
 // File origin: VS1LAB A2
 
-const { get } = require("../../routes");
+//const { get } = require("../routes");
 
 /* eslint-disable no-unused-vars */
 
@@ -76,8 +76,11 @@ function updateLocation() {
 
     }
 }
+
+let mapManager;
         
 document.addEventListener("DOMContentLoaded", () => {
+    mapManager = new MapManager();
     updateLocation();
 
     const taggingForm = document.getElementById("tag-form");
@@ -89,9 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-    /*async function TaggingSubmit(event) {
+    async function TaggingSubmit(event) {
         console.log("ich mag kekse")
-        event.preventDefault;
+        event.preventDefault();
 
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -109,20 +112,49 @@ document.addEventListener("DOMContentLoaded", () => {
         return await response.json();
     }
 
-    /*async function DiscoverySubmit(event) {
+    async function DiscoverySubmit(event) {
         console.log("ich mag kekse2")
-        event.preventDefault;
+        event.preventDefault();
 
-        latitude = document.getElementById("Dla").value;
-        longitude = document.getElementById("Dlo").value;
-        searchTerm = document.getElementById("Dse").value;
+        const latitude = document.getElementById("Dla").value;
+        const longitude = document.getElementById("Dlo").value;
+        const searchTerm = document.getElementById("Dse").value;
 
-        const response = await fetch(
-            `/api/geotags?latitude=${latitude}&longitude=${longitude}&searchterm=${searchTerm}`
-        )
+        return await fetch(
+            `/api/geotags?latitude=${latitude}&longitude=${longitude}&searchterm=${searchTerm}`,{
+            method: "GET"
+        })
 
-        return await response.json();
-    }*/
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Erfolg:", data);
+      
+            console.log(data);
+            const map = document.getElementById("map");
+            const taglistString = map.getAttribute("data-tags");
+            console.log(taglistString);
+
+            const tagList = JSON.parse(taglistString);
+            console.log(tagList);
+
+            const resultsListElement = document.getElementById("discoveryResults");
+            resultsListElement.innerHTML = "";
+
+            for (const tag of tagList) {
+                tag.location = { latitude: tag.latitude, longitude: tag.longitude };
+
+                const childElement = document.createElement("li");
+                childElement.innerHTML = `${tag.name} (${tag.latitude}, ${tag.longitude}) ${tag.hashtag}`;
+
+                resultsListElement.appendChild(childElement);
+            }
+
+            mapManager.updateMarkers(latitude, longitude, tagList);
+
+        })
+
+        .catch((error) => console.error("Fehler:", error));
+    }
 
 /*
 // Wait for the page to fully load its DOM content, then call updateLocation
