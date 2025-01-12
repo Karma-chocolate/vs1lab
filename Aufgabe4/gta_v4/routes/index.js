@@ -268,11 +268,12 @@ router.put("/api/geotags/:id", (req, res) => {
 // TODO: ... your code here ...
 router.delete("/api/geotags/:id", (req, res) => {
   const id = Number(req.params.id);
+  let geoTag = geoTagStore.geoTagById(id);
 
   geoTagStore.removeGeoTagByID(id);
-  // Lösche GeoTag mit ID = id
+  // res.location(`/api/geotags`);
 
-  res.status(202);
+  res.status(202).json(geoTag);
 });
 
 module.exports = router;
