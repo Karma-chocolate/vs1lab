@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function DiscoverySubmit(event) {
         console.log("ich mag kekse2")
+        mapManager = new MapManager();
         event.preventDefault();
 
         const latitude = document.getElementById("Dla").value;
@@ -129,19 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((data) => {
             console.log("Erfolg:", data);
       
-            console.log(data);
-            const map = document.getElementById("map");
-            const taglistString = map.getAttribute("data-tags");
-            console.log(taglistString);
+            const tagList = data.geotags;
 
-            const tagList = JSON.parse(taglistString);
             console.log(tagList);
 
             const resultsListElement = document.getElementById("discoveryResults");
             resultsListElement.innerHTML = "";
 
             for (const tag of tagList) {
-                tag.location = { latitude: tag.latitude, longitude: tag.longitude };
 
                 const childElement = document.createElement("li");
                 childElement.innerHTML = `${tag.name} (${tag.latitude}, ${tag.longitude}) ${tag.hashtag}`;
