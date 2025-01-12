@@ -12,9 +12,9 @@ POST {{hostname}}/api/geotags
 Content-Type: application/json
 
 {
-    "name": "TEST",
-    "latitude": 48.87036,
-    "longitude": 8.39479,
+    "name": "Test",
+    "latitude": 49.02503,
+    "longitude": 8.37163,
     "hashtag": "#test"
 }
 
@@ -29,10 +29,10 @@ PUT  {{hostname}}/api/geotags/{{id}}
 Content-Type: application/json
 
 {
-    "name": "TEST",
-    "latitude": 48.87036,
-    "longitude": 8.39479,
-    "hashtag": "#123"
+    "name": "Test",
+    "latitude": 49.02503,
+    "longitude": 8.37163,
+    "hashtag": "#test"
 }
 
 
