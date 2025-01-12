@@ -36,7 +36,7 @@ class InMemoryGeoTagStore{
     }
 
     geoTagById(id) {
-        return this.#geotags.filter((tag) => tag.id == id)[4];
+        return this.#geotags.filter((tag) => tag.id == id)[0];
     }
 
     addGeoTag(GeoTag){
